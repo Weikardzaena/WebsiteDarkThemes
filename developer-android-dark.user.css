@@ -66,6 +66,22 @@
         color: /*[[ac-primary]]*/
     }
 
+    select {
+        background-color: /*[[bg-1]]*/;
+        color: /*[[fg-primary]]*/;
+        border-color: /*[[bg-9]]*/
+    }
+
+    select:hover,
+    select:focus {
+        background: /*[[bg-9]]*/;
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    label {
+        color: /*[[fg-disabled]]*/
+    }
+
     /* SECTION: Special Blocks */
     aside,
     aside code,
@@ -154,6 +170,15 @@
     body[theme=android-theme][layout=docs],
     body[theme=android-theme] .devsite-book-nav-bg::after {
         background: /*[[bg-0]]*/
+    }
+
+    .devsite-nav-accordion {
+        border-color: /*[[bg-0]]*/
+    }
+
+    .devsite-future-version,
+    .devsite-future-version * {
+        color: /*[[fg-disabled]]*/
     }
 
     /* SECTION: Developer Articles Header */
@@ -367,5 +392,30 @@
     /* SECTION: Releases Book Nav */
     devsite-book-nav .devsite-nav-list > .devsite-nav-heading:not(.devsite-nav-divider) {
         border-color: /*[[bg-0]]*/
+    }
+
+    /* SECTION: Documentation -> Reference */
+    .kotlin-aside {
+        background: /*[[bg-7]]*/;
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-accordion) .devsite-nav-title {
+        color: /*[[fg-primary]]*/;
+        border-color: /*[[bg-0]]*/
+    }
+
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-active) .devsite-nav-title:hover,
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-active) .devsite-nav-title:focus {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item.devsite-nav-heading:not(.devsite-nav-accordion) .devsite-nav-title {
+        background: /*[[bg-3]]*/;
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .devsite-nav-accordion > devsite-expandable-nav > .devsite-nav-title {
+        color: /*[[fg-primary-emph]]*/
     }
 }
