@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Android Developer Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.2
+@version        0.0.3
 @description    UserStyle for Android Developer website.
 @author         Nikolai Kotula (Weikardzaena)
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/developer-android-dark.user.css
@@ -82,6 +82,11 @@
         color: /*[[fg-disabled]]*/
     }
 
+    .button-white {
+        background: /*[[bg-9]]*/;
+        color: /*[[ac-primary]]*/
+    }
+
     /* SECTION: Special Blocks */
     aside,
     aside code,
@@ -120,6 +125,86 @@
     }
 
     body[theme=android-theme] devsite-tabs.upper-tabs > div > tab[active] > a::after {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    body[theme=android-theme] devsite-tabs.upper-tabs > div > tab > a:hover,
+    body[theme=android-theme] devsite-tabs.upper-tabs > div > tab > a:focus {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    devsite-select .devsite-select-toggle {
+        background-color: /*[[bg-1]]*/;
+        border-color: /*[[bg-9]]*/
+    }
+
+    devsite-language-selector > devsite-select .devsite-select-toggle {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-select .devsite-select-toggle:hover,
+    devsite-select .devsite-select-toggle:focus {
+        color: /*[[fg-primary-emph]]*/;
+        background: /*[[bg-9]]*/
+    }
+
+    devsite-search .devsite-searchbox {
+        background: /*[[bg-0]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-field {
+        background: /*[[bg-1]]*/;
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-field:hover {
+        background: /*[[bg-9]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-field,
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-image {
+        color: /*[[fg-primary]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search[search-active] .devsite-search-field,
+    body[theme=android-theme] devsite-header devsite-search[search-active] .devsite-search-field:hover {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-1]]*/
+    }
+
+    devsite-search[search-active] .devsite-searchbox:hover {
+        background: /*[[bg-4]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-searchbox::before,
+    body[theme=android-theme] devsite-header devsite-search-background,
+    devsite-search .devsite-searchbox::before {
+        background: /*[[bg-4]]*/
+    }
+
+    devsite-search .devsite-popout-result {
+        background: /*[[bg-9]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggestion-fragment {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-result-item-link:hover,
+    devsite-search .devsite-popout-result .devsite-result-item-link:focus {
+        background: /*[[bg-4]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggest-header {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggest-footer .devsite-suggest-all-results {
+        color: /*[[fg-primary-emph]]*/;
+        background: /*[[ac-primary]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggest-footer .devsite-suggest-all-results:hover,
+    devsite-search .devsite-popout-result .devsite-suggest-footer .devsite-suggest-all-results:focus {
         background: /*[[ac-primary-alt]]*/
     }
 
