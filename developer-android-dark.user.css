@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Android Developer Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.6
+@version        0.0.7
 @description    UserStyle for Android Developer website.
 @author         Nikolai Kotula (Weikardzaena)
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/developer-android-dark.user.css
@@ -23,6 +23,7 @@
 @advanced color ac-secondary "Secondary accent color" #65496e
 @advanced color error "Error color" #a33e3e
 @advanced color warning "Warning color" #d1b2ab
+@advanced color selection "Selection background" #ffffff1d
 ==/UserStyle== */
 @-moz-document domain("developer.android.com") {
     /* SECTION: Global */
@@ -37,6 +38,10 @@
     :link,
     :visited {
         color: /*[[ac-primary]]*/
+    }
+
+    ::selection {
+        background: /*[[selection]]*/
     }
 
     /* SECTION: Code Blocks */
