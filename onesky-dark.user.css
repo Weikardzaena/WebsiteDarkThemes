@@ -1,0 +1,741 @@
+/* ==UserStyle==
+@name           OneSky
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/onesky-dark.user.css
+@advanced color bg-0 "Primary background color" #000000
+@advanced color fg-primary-emph "Primary foreground color for emphasis" #ffffffdf
+@advanced color fg-primary "Primary foreground color" #ffffff9a
+@advanced color fg-disabled "Disabled text primary color" #ffffff61
+@advanced color bg-1 "Level 1 background color" #ffffff0d
+@advanced color bg-2 "Level 2 background color" #ffffff12
+@advanced color bg-3 "Level 3 background color" #ffffff15
+@advanced color bg-4 "Level 4 background color" #ffffff17
+@advanced color bg-5 "Level 5 background color" #ffffff1c
+@advanced color bg-6 "Level 6 background color" #ffffff1f
+@advanced color bg-7 "Level 7 background color" #ffffff24
+@advanced color bg-8 "Level 8 background color" #ffffff27
+@advanced color bg-9 "Level 9 background color" #ffffff29
+@advanced color ac-primary "Primary accent color" #309fab
+@advanced color ac-primary-alt "Alt primary accent color" #418752
+@advanced color ac-secondary "Secondary accent color" #65496e
+@advanced color error "Error color" #a33e3e
+@advanced color dark-text "Dark text" #111111
+==/UserStyle== */
+@-moz-document domain("oneskyapp.com") {
+
+    /* SECTION: Global */
+    body,
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input,
+    .label,
+    .tag,
+    .kbd-wrap {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-0]]*/
+        !important;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    .uneditable-input,
+    .table-bordered,
+    .modal,
+    .modal-footer,
+    .modal-header,
+    .border-bottom,
+    .border-top,
+    .o-column--left,
+    .kbd-wrap,
+    .badge,
+    .tag,
+    .content-box .content-box-subheader,
+    .table tbody th,
+    .table tbody td,
+    .narrow-header th,
+    .narrow-header th:last-child,
+    .narrow-header th:first-child,
+    .narrow-row td,
+    .narrow-row td:first-child,
+    .narrow-row td:last-child,
+    .panel-modal > .panel-header,
+    .panel-modal > .panel-footer {
+        border-color: /*[[bg-9]]*/
+        !important;
+    }
+
+    .modal,
+    .modal-dialog,
+    .badge,
+    .dropdown-menu,
+    .popover.top.in.fade {
+        background: /*[[bg-0]]*/;
+        border-color: /*[[ac-primary]]*/
+    }
+
+    .popover .popover-inner .popover-title {
+        color: /*[[fg-primary-emph]]*/;
+        background: /*[[bg-0]]*/
+    }
+
+    .popover .popover-inner .popover-content {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-0]]*/
+    }
+
+    .badge {
+        color: /*[[ac-primary]]*/
+    }
+
+    .modal-header,
+    .modal-footer,
+    .modal textarea,
+    .modal input[type="text"],
+    .modal input[type="password"],
+    .modal input[type="datetime"],
+    .modal input[type="datetime-local"],
+    .modal input[type="date"],
+    .modal input[type="month"],
+    .modal input[type="time"],
+    .modal input[type="week"],
+    .modal input[type="number"],
+    .modal input[type="email"],
+    .modal input[type="url"],
+    .modal input[type="search"],
+    .modal input[type="tel"],
+    .modal input[type="color"],
+    .modal .uneditable-input {
+        background: /*[[bg-3]]*/
+        !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .title-box h1 {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .caret,
+    h1 small,
+    h2 small,
+    h3 small,
+    h4 small,
+    h5 small,
+    h6 small {
+        color: /*[[fg-primary]]*/
+    }
+
+    .caret {
+        border-top: 4px solid/*[[fg-primary]]*/;
+    }
+
+    * {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    a,
+    body a,
+    body a:hover,
+    .custom-checklabel .custom-checkbox[type="checkbox"]:checked + .custom-checkbox-label .custom-checkbox-box,
+    .custom-checklabel .custom-checkbox[type="radio"]:checked + .custom-checkbox-label .custom-checkbox-box,
+    .custom-checklabel .custom-checkbox[type="checkbox"]:checked + .custom-checkbox-label .custom-checklabel-text,
+    .custom-checklabel .custom-checkbox[type="radio"]:checked + .custom-checkbox-label .custom-checklabel-text {
+        color: /*[[ac-primary]]*/
+    }
+
+    .dropdown-menu input[type="search"],
+    .dropdown-menu > li a,
+    .dropdown-menu > li button {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-3]]*/
+        !important;
+    }
+
+    .dropdown-menu > li.active a,
+    .dropdown-menu > li.active button {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .dropdown-menu > li a:hover,
+    .dropdown-menu > li a:focus,
+    .dropdown-menu > li button:hover,
+    .dropdown-menu > li button:focus {
+        background: /*[[bg-3]]*/;
+        border-color: /*[[bg-3]]*/
+    }
+
+    .black-txt {
+        color: /*[[fg-primary-emph]]*/
+        !important;
+    }
+
+    .u-userLauncherColor:not([disabled]) {
+        background: /*[[ac-primary]]*/
+        !important;
+        color: /*[[fg-primary-emph]]*/
+        !important;
+    }
+
+    .btn {
+        background: /*[[bg-4]]*/;
+        color: /*[[fg-primary-emph]]*/;
+        border-color: /*[[bg-4]]*/
+    }
+
+    .btn-group.open .btn.dropdown-toggle,
+    .btn:hover,
+    .btn:focus {
+        background: /*[[bg-9]]*/;
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .btn-success {
+        background: /*[[ac-primary-alt]]*/;
+        border-color: /*[[ac-primary-alt]]*/
+    }
+
+    .btn.btn-primary,
+    .btn-primary.btn-panel {
+        background: /*[[ac-primary]]*/;
+        border-color: /*[[ac-primary]]*/
+    }
+
+    .slide-switch {
+        background: /*[[bg-9]]*/;
+        border-color: /*[[bg-9]]*/
+    }
+
+    .slide-switch .slide-switch-on {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    table,
+    thead {
+        background: /*[[bg-0]]*/
+        !important;
+    }
+
+    .fade {
+        background: /*[[bg-9]]*/
+    }
+
+    .alert {
+        background: /*[[error]]*/;
+        color: /*[[fg-primary]]*/
+    }
+
+    .alert-info {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .alert p a {
+        color: /*[[ac-primary]]*/
+    }
+
+    /* SECTION: Sign-in */
+    .auth-content,
+    .auth-form .hr-block .or-block {
+        background: /*[[bg-2]]*/
+    }
+
+    /* SECTION: Left column nav */
+    .o-column--left {
+        background: /*[[bg-1]]*/
+    }
+
+    .c-project-navListItemLink:hover,
+    .c-project-navListItemLink:focus {
+        background: /*[[bg-2]]*/
+    }
+
+    .c-project-navHeader {
+        color: /*[[fg-primary-emph]]*/;
+    }
+
+    .c-project-navListItemLink {
+        color: /*[[fg-primary]]*/;
+    }
+
+    .c-project-navListItem.is-active .c-project-navListItemLink {
+        color: /*[[ac-primary]]*/
+    }
+
+    .c-project-navListItem.has-icon-button:hover,
+    .c-project-navListItem.has-icon-button:focus {
+        background: /*[[bg-9]]*/
+    }
+
+    /* SECTION: Phrases page */
+    .project-nav-phrase-meta {
+        background: /*[[bg-1]]*/
+    }
+
+    /* SECTION: Dashboard */
+    .dashboard-unit {
+        background: /*[[bg-1]]*/
+    }
+
+    ul.feed-content li.feed-item .feed-more {
+        background: /*[[bg-2]]*/
+    }
+
+    .dashboard-unit .unit-title .site-stat strong,
+    ul.feed-content li.feed-item .feed-body {
+        color: /*[[fg-primary]]*/
+    }
+
+    .dashboard-unit .feed-notice-content {
+        background: /*[[ac-secondary]]*/
+    }
+
+    .dashboard-unit .feed-notice-content,
+    .dashboard-unit .feed-notice-content h3 {
+        color: /*[[fg-primary]]*/
+    }
+
+    .dashboard-unit,
+    .dashboard-unit .unit-title,
+    ul.feed-content li.feed-item,
+    ol.qa-todo-content li.qa-todo-item {
+        border-color: /*[[bg-9]]*/
+    }
+
+    /* SECTION: All Projects */
+    .content-box .content-box-header .content-box-header-content .input-prepend .add-on {
+        background: /*[[bg-0]]*/
+    }
+
+    .content-box-body,
+    .content-box .content-box-header {
+        background: /*[[bg-1]]*/
+    }
+
+    .platform-box {
+        background: /*[[bg-4]]*/
+    }
+
+    .add-platform-box {
+        background: /*[[bg-2]]*/
+    }
+
+    .platform-box-content .platform-data-box {
+        background: /*[[bg-4]]*/
+    }
+
+    .platform-box .platform-name a,
+    .platform-box .platform-icon a,
+    .platform-box-content .platform-data-box .platform-data-time,
+    .platform-box-content .platform-data-box .platform-data .platform-data-title,
+    .platform-box-content .platform-data-box .platform-data {
+        color: /*[[fg-primary]]*/
+    }
+
+    .platform-box,
+    .content-box-body,
+    .content-box .content-box-header,
+    .platform-box-content .platform-data-box,
+    .content-box .content-box-header .content-box-header-content .input-prepend .add-on {
+        border-color: /*[[bg-9]]*/
+    }
+
+    /* SECTION: Project Overview */
+    .table-translation-dashboard > tbody > tr {
+        background: /*[[bg-3]]*/
+    }
+
+    .table-language-dashboard thead th,
+    .table-glossary-dashboard thead th,
+    .table-language-select thead th {
+        background: /*[[bg-6]]*/
+    }
+
+    .content-box .content-box-subheader,
+    .c-headerSub {
+        background: /*[[bg-9]]*/
+    }
+
+    .subtitle-box h2,
+    .narrow-row .language-td .language-float-unit h3,
+    .c-breadcrumb-item.is-active .c-breadcrumb-link {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .narrow-row .stats-td .dropdown-toggle,
+    .narrow-row .approved-td small,
+    .narrow-row .translated-td small,
+    .narrow-row .resolved-td small {
+        color: /*[[fg-primary]]*/
+    }
+
+    .breadcrumb li::after {
+        color: /*[[fg-disabled]]*/
+    }
+
+    /* SECTION: Project Language */
+    .nav-tabs-justified-string-meta {
+        background: /*[[bg-0]]*/
+    }
+
+    .nav-tabs-justified > li.active,
+    .nav-tabs-justified-string-meta > li.active a,
+    .tab-content-string-meta-container {
+        background: /*[[bg-2]]*/
+    }
+
+    .panel-card-list-meta .form-search-phrase-area input {
+        background: /*[[bg-2]]*/
+        !important;
+    }
+
+    .panel-card,
+    .list-post-item,
+    .panel-card.active > .panel-body {
+        background: /*[[bg-3]]*/
+    }
+
+    .label-block,
+    .form-side-container-comment,
+    .panel-card > .panel-header,
+    .panel-card > .panel-body .glossary {
+        background: /*[[bg-3]]*/
+    }
+
+    .sub-header,
+    .list-post-item.list-post-item-hover:hover,
+    .list-post-item.list-post-item-hover:focus,
+    .sub-header .main-navigation li.active,
+    .sub-header .main-navigation li.active a,
+    .nav-tabs-justified-string-meta > li.active a:hover,
+    .nav-tabs-justified-string-meta > li.active a:focus,
+    .panel-card > .panel-body .glossary:focus,
+    .panel-card > .panel-body .glossary:hover,
+    .list-search-results .list-search-results-item:hover,
+    .list-search-results .list-search-results-item:focus {
+        background: /*[[bg-9]]*/
+    }
+
+    .panel-card > .panel-body .glossary,
+    .panel-card > .panel-body .glossary:focus,
+    .panel-card > .panel-body .glossary:hover {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .box-note {
+        color: /*[[fg-primary]]*/;
+        background: /*[[ac-secondary]]*/;
+        border-color: /*[[ac-secondary]]*/
+    }
+
+    .list-tag-clickable .title,
+    .tag-clickable,
+    .list-tag-clickable li > .tag,
+    .list-post-item .panel-body,
+    .sub-header .main-navigation li.active a {
+        color: /*[[fg-primary]]*/
+    }
+
+    .select-language .dropdown-toggle {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .list-post.list-post-translation-memory .panel-header .text {
+        color: /*[[fg-disabled]]*/
+    }
+
+    .list-post-item,
+    .panel-card,
+    .label-block,
+    .sub-header,
+    .tab-content-string-meta-container,
+    .panel-card > .panel-header,
+    .list-post .list-post-item:first-child,
+    .list-post .list-post-item:last-child,
+    .sub-header .main-navigation li,
+    .panel-card > .panel-header .bevel,
+    .panel-card > .panel-header .column:first-child,
+    .panel-card > .panel-header .custom-checkbox-label,
+    .panel-card > .panel-header .bevel-right {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .nav-tabs-justified > li.active {
+        border-left-color: /*[[bg-0]]*/;
+        border-right-color: /*[[bg-0]]*/;
+    }
+
+    .custom-checklabel .custom-checkbox-label-icon,
+    .nav-tabs-justified-string-meta > li.active a,
+    .select-language .dropdown-toggle:hover,
+    .select-language .dropdown-toggle:focus {
+        color: /*[[ac-primary]]*/;
+    }
+
+    .nav-tabs-justified-string-meta > li.active {
+        border-color: /*[[ac-primary]]*/;
+    }
+
+    .main-header {
+        background: /*[[ac-primary]]*/
+    }
+
+    .list-post-item-active .panel-title a {
+        color: /*[[ac-primary-alt]]*/
+    }
+
+    .modal-find-and-replace .form {
+        background: /*[[bg-3]]*/;
+        color: /*[[fg-primary]]*/
+    }
+
+    .list-search-results .list-search-results-item .highlight {
+        background: /*[[ac-primary]]*/;
+        color: /*[[dark-text]]*/
+    }
+
+    .list-search-results .list-search-results-item .highlight.highlight-active {
+        background: /*[[ac-primary-alt]]*/;
+        color: /*[[dark-text]]*/
+    }
+
+    /* SECTION: Project Tasks */
+    .panel-feature-intro {
+        background: /*[[bg-1]]*/;
+        border-color: /*[[ac-primary]]*/
+    }
+
+    .list-post-folder-item,
+    .side-actions-container,
+    .panel-header-bar,
+    .panel-header-filter,
+    .panel-header-bar .custom-check .custom-checkbox-label {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .empty-state,
+    .panel-feature-intro .list-steps p,
+    .empty-state .empty-state-message .icon {
+        color: /*[[fg-primary]]*/
+    }
+
+    .table-dark thead th,
+    .table-light thead th {
+        background: /*[[bg-3]]*/
+    }
+
+    .table-light .highlight {
+        background: /*[[bg-5]]*/
+    }
+
+    .table-light tbody tr:hover,
+    .table-light tbody tr:focus,
+    .list-post-folder-item:hover,
+    .list-post-folder-item:focus,
+    .list-post-folder-item.active {
+        background: /*[[bg-9]]*/
+    }
+
+    .table-dark,
+    .table-light {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .side-actions-container,
+    .panel-header-bar,
+    .panel-modal > .panel-header,
+    .panel-modal > .panel-footer {
+        background: /*[[bg-1]]*/
+    }
+
+    /* SECTION: Collaboration */
+    .content-container-style-invert {
+        background: /*[[bg-2]]*/
+    }
+
+    .block,
+    .tabs > li.active > a,
+    .table-dark thead tr,
+    .table-light thead tr {
+        background: /*[[bg-4]]*/;
+    }
+
+    .list-topic-title,
+    .breadcrumb-block-title,
+    .breadcrumb-block-title .breadcrumb-block-title-item {
+        color: /*[[fg-primary-emph]]*/;
+        border-left-color: /*[[ac-primary]]*/
+    }
+
+    .list-topic-language,
+    .list-topic a,
+    .list-topic-title .string-key,
+    .block-item-list .list a,
+    .tabs > li.active > a,
+    .tabs > li > a,
+    .tabs > li > a:hover,
+    .tabs > li > a:focus {
+        color: /*[[fg-primary]]*/
+    }
+
+    .list-topics .list-hover .list-topic:hover,
+    .list-topics .list-hover .list-topic:focus,
+    .tabs > li.active > a:hover,
+    .tabs > li.active > a:focus,
+    .tabs > li > a:hover,
+    .tabs > li > a:focus {
+        background: /*[[bg-9]]*/
+    }
+
+    .block-item-list .list .active a,
+    .tabs-option > li.active > a,
+    .tabs-option > li.active > .btn,
+    .block-item-list .list a:hover,
+    .block-item-list .list a:active,
+    .list-topic .meta-data-list a,
+    .breadcrumb-block-title a.breadcrumb-block-title-item {
+        color: /*[[ac-primary]]*/;
+        border-left-color: /*[[ac-primary]]*/
+    }
+
+    .tabs,
+    .tabs-option,
+    .list-topic,
+    .content-container-style,
+    .block,
+    .block-link,
+    .list-topic:first-child,
+    .list-topic:only-child,
+    .list-topic:last-child,
+    .table-dark thead th,
+    .table-light thead th,
+    .tabs-option > li > a,
+    .tabs-option > li > .btn,
+    .tabs > li.active {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .table-dark tbody td > a:hover {
+        color: /*[[ac-primary-alt]]*/
+    }
+
+    /* SECTION: Phrases */
+    .phrase-manage-list {
+        background: /*[[bg-2]]*/
+    }
+
+    .phrase-manage-list,
+    .phrase-manage-list-item,
+    .project-nav-phrase-meta {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .subtitle-box h2 {
+        border-left-color: /*[[ac-primary]]*/
+    }
+
+    .narrow-row .phrase-td .clickable,
+    .project-nav-phrase-meta-list .active a {
+        color: /*[[ac-primary]]*/
+    }
+
+    .project-nav-phrase-meta-list .highlight {
+        color: /*[[ac-primary-alt]]*/
+    }
+
+    .project-nav-phrase-meta-list a {
+        color: /*[[fg-primary]]*/
+    }
+
+    /* SECTION: Glossary */
+    .project-nav-navigation,
+    .table-language-select td {
+        background: /*[[bg-2]]*/
+    }
+
+    .table-language-select .narrow-blocked-row td {
+        background: /*[[ac-secondary]]*/
+    }
+
+    .table-language-select .narrow-language-show-more .show-more {
+        background: /*[[ac-primary]]*/
+    }
+
+    .project-nav-navigation .primary-list .primary-list-item-link {
+        color: /*[[fg-primary]]*/
+    }
+
+    .project-nav-navigation,
+    .project-nav-navigation .primary-list .primary-list-item {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .project-nav-navigation .primary-list .active {
+        border-bottom-color: /*[[ac-primary]]*/
+    }
+
+    .project-nav-navigation .primary-list .primary-list-item-link:hover,
+    .project-nav-navigation .primary-list .primary-list-item-link:focus {
+        color: /*[[fg-primary-emph]]*/;
+        background: /*[[bg-3]]*/
+    }
+
+    /* SECTION: Settings */
+    .content-box-body-content .tab-content {
+        background: /*[[bg-2]]*/
+    }
+
+    .well {
+        background: /*[[bg-4]]*/
+    }
+
+    #pane-glossary.fade {
+        background: none
+    }
+
+    .ios {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-2]]*/
+    }
+
+    .ios[checked="checked"] {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    .project-box .project-box-header {
+        background: /*[[ac-primary]]*/;
+        border-color: /*[[ac-primary-alt]]*/
+    }
+}
