@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Android Developer Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.4
+@version        0.0.5
 @description    UserStyle for Android Developer website.
 @author         Nikolai Kotula (Weikardzaena)
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/developer-android-dark.user.css
@@ -437,6 +437,10 @@
     table.responsive tr:not(.alt) td td:first-child,
     table.responsive td tr:not(.alt) td:first-child {
         background: /*[[bg-9]]*/
+    }
+
+    table.responsive tr:not(.alt) td:first-child {
+        background: /*[[bg-6]]*/
     }
 
     .columns th {
