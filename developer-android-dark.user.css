@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Android Developer Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.5
+@version        0.0.6
 @description    UserStyle for Android Developer website.
 @author         Nikolai Kotula (Weikardzaena)
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/developer-android-dark.user.css
@@ -540,5 +540,21 @@
 
     .devsite-nav-accordion > devsite-expandable-nav > .devsite-nav-title {
         color: /*[[fg-primary-emph]]*/
+    }
+
+    .api-level a,
+    .api-level a:active,
+    .api-level a:visited {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-select .devsite-select-list {
+        background: /*[[bg-9]]*/;
+        border-color: /*[[bg-0]]*/
+    }
+
+    devsite-select .devsite-select-item:hover,
+    devsite-select .devsite-select-item:focus {
+        background: /*[[bg-5]]*/
     }
 }
