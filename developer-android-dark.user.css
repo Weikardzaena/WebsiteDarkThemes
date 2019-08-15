@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Android Developer Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.1
+@version        0.0.2
 @description    UserStyle for Android Developer website.
 @author         Nikolai Kotula (Weikardzaena)
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/developer-android-dark.user.css
@@ -200,6 +200,18 @@
         background: /*[[ac-secondary]]*/
     }
 
+    .devsite-steps .steps-link-title {
+        color: /*[[ac-primary]]*/
+    }
+
+    .devsite-steps .steps-link-arrow {
+        color: /*[[ac-primary]]*/
+    }
+
+    .devsite-steps .steps-link-direction {
+        color: /*[[fg-primary]]*/
+    }
+
     body[theme=android-theme] devsite-toc > .devsite-nav-list {
         border-color: /*[[ac-primary-alt]]*/
     }
@@ -273,6 +285,10 @@
         border-color: /*[[bg-9]]*/
     }
 
+    devsite-footer-utility nav {
+        border-color: /*[[bg-9]]*/
+    }
+
     /* SECTION: Tables */
     tr {
         background: /*[[ac-secondary]]*/;
@@ -291,5 +307,65 @@
     table.responsive tr:not(.alt) td td:first-child,
     table.responsive td tr:not(.alt) td:first-child {
         background: /*[[bg-9]]*/
+    }
+
+    /* SECTION: Platform Overview Landing Page */
+    .devsite-landing-row:not([background]) {
+        background: /*[[bg-9]]*/
+    }
+
+    .devsite-landing-row:not([background]).dac-landing-row-bg-blob-8,
+    [background=grey] {
+        background: /*[[bg-7]]*/
+    }
+
+    [background=white] {
+        background: /*[[bg-9]]*/
+    }
+
+    .devsite-landing-row-item-description-content,
+    .devsite-landing-row:not([background]):not([foreground]) .devsite-landing-row-description {
+        color: /*[[fg-primary]]*/
+    }
+
+    [background=white] h2,
+    [background=white]:not(.devsite-landing-row-cards) h3,
+    [background=white]:not([foreground]):not(.devsite-landing-row-cards) {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    /* SECTION: Releases Landing Page */
+    .devsite-landing-row h1,
+    .devsite-landing-row h2,
+    .devsite-landing-row-item h2,
+    .devsite-landing-row-item h3,
+    .dac-landing-row-hero h2 {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .dac-outline-button {
+        border-color: /*[[ac-primary-alt]]*/
+    }
+
+    .dac-outline-button:hover,
+    .dac-outline-button:focus {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    devsite-dynamic-content .devsite-card {
+        background: /*[[bg-8]]*/
+    }
+
+    devsite-dynamic-content .devsite-card h3 {
+        color: /*[[fg-primary]]*/
+    }
+
+    .dac-featured-cards .devsite-landing-row-column {
+        background: /*[[bg-8]]*/
+    }
+
+    /* SECTION: Releases Book Nav */
+    devsite-book-nav .devsite-nav-list > .devsite-nav-heading:not(.devsite-nav-divider) {
+        border-color: /*[[bg-0]]*/
     }
 }
