@@ -1,0 +1,333 @@
+/*
+ * Copyright 2000-2013 JetBrains s.r.o.
+ * Modifications Copyright (c) 2018 G. Nikolai Kotula
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* ==UserStyle==
+@name           Google Search Darcula
+@namespace      github.com/openstyles/stylus
+@version        0.0.4
+@description    IntelliJ's Darcula theme applied to Google Search Results
+@author         Weikardzaena
+@license        Apache 2.0
+@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/google-search-dark.user.css
+@advanced color gray-primary "Primary Gray color" #2a2a2a
+@advanced color gray-emphasis "Gray color for emphasis" #222222
+@advanced color gray-secondary "Gray accent" #323232
+@advanced color gray-middle "Middle Gray color" #808080
+@advanced color green-primary "Primary Green color" #77c256
+@advanced color green-subtle "Subtle Green color" #77c25633
+@advanced color orange-primary "Primary Orange color" #cc7832
+@advanced color orange-secondary "Orange accent" #febb5b
+@advanced color purple-primary "Primary Purple color" #9775aa
+@advanced color red-primary "Primary Red color" #bc3e3c
+@advanced color silver-primary "Primary Silver color" #a8b7c8
+@advanced color silver-subtle "Primary Silver color with transparency" #a8b7c8cc
+@advanced color yellow-primary "Primary Yellow color" #ffc66d
+==/UserStyle== */
+@-moz-document regexp("^https?:\/\/(www\.)?google\.com(?!\/maps)(?!\/flights).*") {
+
+    /********/
+    /* CORE */
+    /********/
+    html,
+    body {
+        background-color: /*[[gray-primary]]*/
+        !important;
+    }
+
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: /*[[silver-primary]]*/
+        !important;
+    }
+
+    a,
+    .flt,
+    .wUrVib,
+    .EZRelc,
+    .xXEKkb,
+    a:link,
+    a.mblink,
+    a.flt,
+    a.fl:link,
+    .fl a,
+    .gl a:link,
+    .mblink b {
+        color: /*[[orange-primary]]*/
+        !important;
+    }
+
+    .hdtbItm label:hover,
+    .hdtbItm a:hover,
+    #hdtb-more-mn a:hover,
+    #hdtb .hdtb-mitem a:hover,
+    .hdtb-mn-hd:hover,
+    #hdtb-more:hover,
+    #hdtb-tls:hover {
+        color: white !important;
+    }
+
+    a:visited,
+    a:visited h1,
+    a:visited h2,
+    a:visited h3,
+    a:visited h4,
+    a:visited h5,
+    a:visited h6 {
+        color: /*[[purple-primary]]*/
+        !important;
+    }
+
+    cite {
+        color: /*[[orange-secondary]]*/
+        !important;
+    }
+
+    /***********/
+    /* Buttons */
+    /***********/
+    .ab_button {
+        color: /*[[silver-primary]]*/ !important;
+        background-color: /*[[gray-secondary]]*/ !important;
+        background: -webkit-linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
+        background: -moz-linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
+        background: -o-linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
+        background: linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
+        border-color: /*[[gray-emphasis]]*/;
+    }
+
+    .ab_button:hover {
+        border-color: /*[[gray-middle]]*/ !important;
+    }
+
+    /**************/
+    /* SEARCH BAR */
+    /**************/
+    .RNNXgb,
+    .aajZCb,
+    .sbibod,
+    .sbib_a {
+        background-color: /*[[gray-secondary]]*/
+        !important;
+    }
+
+    .RNNXgb {
+        border-color: /*[[gray-middle]]*/
+        !important;
+    }
+
+    .RNNXgb:hover,
+    .sbfc {
+        border-color: #00000000 !important;
+    }
+
+    /*******************/
+    /* Main Search Bar */
+    /*******************/
+    .gLFyf {
+        color: /*[[silver-primary]]*/
+        !important;
+    }
+
+    /***********************/
+    /* Search Bar Dropdown */
+    /***********************/
+    .sbl1 {
+        color: /*[[silver-subtle]]*/
+        !important;
+    }
+
+    .sbct.sbhl {
+        background-color: /*[[green-subtle]]*/
+        !important;
+    }
+
+    /***********/
+    /* APP BAR */
+    /***********/
+    #appbar,
+    #hdtbSum,
+    .sfbgg {
+        background-color: /*[[gray-primary]]*/
+        !important;
+    }
+
+    #hdtb,
+    #hdtb-msb #hdtb-tls,
+    #hdtb .hdtb-mitem a {
+        color: /*[[silver-primary]]*/
+        !important;
+    }
+
+    #hdtb {
+        border-bottom: 1px solid /*[[gray-middle]]*/
+        !important;
+    }
+
+    /********************/
+    /* Page/tools links */
+    /********************/
+    .cJzOGc,
+    #hdtb-msb .hdtb-mitem.hdtb-msel,
+    #hdtb-msb .hdtb-mitem.hdtb-msel-pre{
+        color: /*[[green-primary]]*/
+        !important;
+        border-bottom-color: /*[[green-primary]]*/
+        !important;
+    }
+
+    /********************/
+    /* Floating app bar */
+    /********************/
+    .minidiv .sfbg {
+        background-color: /*[[gray-primary]]*/
+        !important;
+        box-shadow: 0 1px 6px 0 #00000077 !important;
+    }
+
+    /**********************/
+    /* MAIN RESULTS - ALL */
+    /**********************/
+    .s,
+    .st,
+    .garHBe,
+    .Ss2Faf,
+    .oaSpFd,
+    .JolIg,
+    .eJ7tvc,
+    .kno-ecr-pt,
+    .gJBeNe,
+    .cwUqwd,
+    .Y28wmf,
+    .w8qArf .fl,
+    .rl_item_base .title,
+    .s .st em {
+        color: /*[[silver-primary]]*/
+        !important;
+    }
+
+    .f,
+    .wwUB2c,
+    .kX21rb,
+    .ads-ad,
+    .ads-creative,
+    .ads-creative b,
+    .y8Jpof .LrzXr,
+    .f a:link {
+        color: /*[[gray-middle]]*/
+        !important;
+    }
+
+    #resultsStats,
+    .P1usbc {
+        color: /*[[gray-middle]]*/
+        !important;
+    }
+
+    .exp-outline,
+    .kp-blk,
+    .qmv19b,
+    .rl_item_base,
+    .EPLo7b,
+    .AUiS2,
+    g-inner-card,
+    .wlqJjf.gws-local-riddler__banner-shown{
+        border-color: /*[[gray-middle]]*/
+        !important;
+    }
+    
+    .exp-outline,
+    .kp-blk,
+    .qmv19b,
+    .rl_item_base,
+    g-inner-card {
+        background-color: /*[[gray-secondary]]*/
+        !important;
+    }
+    
+    .y8Jpof:hover {
+        background-color: /*[[gray-primary]]*/
+    }
+
+    /***********************/
+    /* MAIN RESULTS - NEWS */
+    /***********************/
+    .e8fRJf, .wqg8ad {
+        color: /*[[green-primary]]*/
+        !important;
+    }
+
+    /****************************/
+    /* "Searches Related To..." */
+    /****************************/
+    #brs,
+    #brs .med {
+        color: /*[[silver-primary]]*/
+        !important;
+    }
+
+    /**************************/
+    /* PEOPLE ALSO SEARCH FOR */
+    /**************************/
+    /* 'X' button */
+    .XCKyNd {
+        background-color: /*[[red-primary]]*/
+        !important;
+        opacity: 1;
+        padding: 8px;
+    }
+
+    /**********/
+    /* FOOTER */
+    /**********/
+    #fbar {
+        background-color: /*[[gray-secondary]]*/
+        !important;
+    }
+
+    /*****************/
+    /* Location info */
+    /*****************/
+    #swml-loc {
+        color: /*[[silver-primary]]*/
+        !important;
+    }
+
+    .smiUbb,
+    .smiUbb a,
+    #swml a {
+        color: /*[[gray-middle]]*/
+        !important;
+    }
+
+    /*******************************/
+    /* Search results page numbers */
+    /*******************************/
+    #foot #navcnt .cur {
+        color: /*[[purple-primary]]*/
+        !important;
+    }
+
+    #foot #navcnt a {
+        color: /*[[yellow-primary]]*/
+        !important;
+    }
+}
