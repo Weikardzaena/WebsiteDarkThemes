@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Android Developer Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.3
+@version        0.0.4
 @description    UserStyle for Android Developer website.
 @author         Nikolai Kotula (Weikardzaena)
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/developer-android-dark.user.css
@@ -108,6 +108,14 @@
     .caution code,
     .caution :link,
     .caution :visited {
+        color: /*[[error]]*/;
+        background: /*[[warning]]*/
+    }
+
+    .warning,
+    .warning code,
+    .warning :link,
+    .warning :visited {
         color: /*[[error]]*/;
         background: /*[[warning]]*/
     }
@@ -343,6 +351,18 @@
         border-color: /*[[bg-9]]*/
     }
 
+    .objective,
+    .objective code,
+    .objective :link,
+    .objective :visited,
+    .success,
+    .success code,
+    .success :link,
+    .success :visited {
+        background: /*[[ac-primary-alt]]*/;
+        color: /*[[fg-primary-emph]]*/
+    }
+
     /* SECTION: Developer Articles Footer */
     devsite-footer-promos {
         background: /*[[bg-0]]*/
@@ -417,6 +437,20 @@
     table.responsive tr:not(.alt) td td:first-child,
     table.responsive td tr:not(.alt) td:first-child {
         background: /*[[bg-9]]*/
+    }
+
+    .columns th {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .columns code,
+    .columns pre {
+        background: /*[[bg-9]]*/
+    }
+
+    table.orange tr {
+        background: /*[[ac-secondary]]*/;
+        border-color: /*[[ac-secondary]]*/
     }
 
     /* SECTION: Platform Overview Landing Page */
