@@ -1,0 +1,565 @@
+/* ==UserStyle==
+@name           Android Developer Dark
+@namespace      github.com/openstyles/stylus
+@version        0.0.7
+@description    UserStyle for Android Developer website.
+@author         Nikolai Kotula (Weikardzaena)
+@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/developer-android-dark.user.css
+@advanced color bg-0 "Primary background color" #000000
+@advanced color fg-primary-emph "Primary foreground color for emphasis" #ffffffdf
+@advanced color fg-primary "Primary foreground color" #ffffff9a
+@advanced color fg-disabled "Disabled text primary color" #ffffff61
+@advanced color bg-1 "Level 1 background color" #0a0a0a
+@advanced color bg-2 "Level 2 background color" #111111
+@advanced color bg-3 "Level 3 background color" #151515
+@advanced color bg-4 "Level 4 background color" #181818
+@advanced color bg-5 "Level 5 background color" #1d1d1d
+@advanced color bg-6 "Level 6 background color" #202020
+@advanced color bg-7 "Level 7 background color" #252525
+@advanced color bg-8 "Level 8 background color" #282828
+@advanced color bg-9 "Level 9 background color" #303030
+@advanced color ac-primary "Primary accent color" #309fab
+@advanced color ac-primary-alt "Alt primary accent color" #418752
+@advanced color ac-secondary "Secondary accent color" #65496e
+@advanced color error "Error color" #a33e3e
+@advanced color warning "Warning color" #d1b2ab
+@advanced color selection "Selection background" #ffffff1d
+==/UserStyle== */
+@-moz-document domain("developer.android.com") {
+    /* SECTION: Global */
+    html,
+    body,
+    main {
+        background: /*[[bg-0]]*/;
+        color: /*[[fg-primary]]*/
+    }
+
+    a,
+    :link,
+    :visited {
+        color: /*[[ac-primary]]*/
+    }
+
+    ::selection {
+        background: /*[[selection]]*/
+    }
+
+    /* SECTION: Code Blocks */
+    code,
+    pre,
+    .pre-style {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-7]]*/
+    }
+
+    devsite-selector {
+        background: /*[[bg-9]]*/
+    }
+
+    devsite-selector devsite-tabs tab[active] a:link,
+    devsite-selector devsite-tabs tab[active] a:visited {
+        color: /*[[ac-primary]]*/
+    }
+
+    devsite-selector devsite-tabs tab a:link,
+    devsite-selector devsite-tabs tab a:visited {
+        color: /*[[fg-primary]]*/
+    }
+
+    a code,
+    td a code {
+        color: /*[[ac-primary]]*/
+    }
+
+    select {
+        background-color: /*[[bg-1]]*/;
+        color: /*[[fg-primary]]*/;
+        border-color: /*[[bg-9]]*/
+    }
+
+    select:hover,
+    select:focus {
+        background: /*[[bg-9]]*/;
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    label {
+        color: /*[[fg-disabled]]*/
+    }
+
+    .button-white {
+        background: /*[[bg-9]]*/;
+        color: /*[[ac-primary]]*/
+    }
+
+    /* SECTION: Special Blocks */
+    aside,
+    aside code,
+    aside :link,
+    aside :visited,
+    .note,
+    .note code,
+    .note :link,
+    .note :visited,
+    .special,
+    .special code,
+    .special :link,
+    .special :visited {
+        color: /*[[fg-primary]]*/;
+        background: /*[[ac-secondary]]*/
+    }
+
+    .caution,
+    .caution code,
+    .caution :link,
+    .caution :visited {
+        color: /*[[error]]*/;
+        background: /*[[warning]]*/
+    }
+
+    .warning,
+    .warning code,
+    .warning :link,
+    .warning :visited {
+        color: /*[[error]]*/;
+        background: /*[[warning]]*/
+    }
+
+    /* SECTION: Developer Site top nav */
+    body[theme=android-theme] devsite-tabs.upper-tabs tab > a {
+        color: /*[[fg-primary]]*/
+    }
+    body[theme=android-theme] devsite-tabs.upper-tabs > div > tab[active] > a {
+        color: /*[[fg-primary-emph]]*/
+    }
+    body[theme=android-theme] devsite-header .devsite-top-logo-row,
+    body[theme=android-theme] devsite-header devsite-tabs.upper-tabs .devsite-tabs-wrapper {
+        background: /*[[bg-4]]*/
+    }
+
+    body[theme=android-theme] devsite-tabs.upper-tabs > div > tab[active] > a::after {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    body[theme=android-theme] devsite-tabs.upper-tabs > div > tab > a:hover,
+    body[theme=android-theme] devsite-tabs.upper-tabs > div > tab > a:focus {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    devsite-select .devsite-select-toggle {
+        background-color: /*[[bg-1]]*/;
+        border-color: /*[[bg-9]]*/
+    }
+
+    devsite-language-selector > devsite-select .devsite-select-toggle {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-select .devsite-select-toggle:hover,
+    devsite-select .devsite-select-toggle:focus {
+        color: /*[[fg-primary-emph]]*/;
+        background: /*[[bg-9]]*/
+    }
+
+    devsite-search .devsite-searchbox {
+        background: /*[[bg-0]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-field {
+        background: /*[[bg-1]]*/;
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-field:hover {
+        background: /*[[bg-9]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-field,
+    body[theme=android-theme] devsite-header devsite-search .devsite-search-image {
+        color: /*[[fg-primary]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search[search-active] .devsite-search-field,
+    body[theme=android-theme] devsite-header devsite-search[search-active] .devsite-search-field:hover {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-1]]*/
+    }
+
+    devsite-search[search-active] .devsite-searchbox:hover {
+        background: /*[[bg-4]]*/
+    }
+
+    body[theme=android-theme] devsite-header devsite-search .devsite-searchbox::before,
+    body[theme=android-theme] devsite-header devsite-search-background,
+    devsite-search .devsite-searchbox::before {
+        background: /*[[bg-4]]*/
+    }
+
+    devsite-search .devsite-popout-result {
+        background: /*[[bg-9]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggestion-fragment {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-result-item-link:hover,
+    devsite-search .devsite-popout-result .devsite-result-item-link:focus {
+        background: /*[[bg-4]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggest-header {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggest-footer .devsite-suggest-all-results {
+        color: /*[[fg-primary-emph]]*/;
+        background: /*[[ac-primary]]*/
+    }
+
+    devsite-search .devsite-popout-result .devsite-suggest-footer .devsite-suggest-all-results:hover,
+    devsite-search .devsite-popout-result .devsite-suggest-footer .devsite-suggest-all-results:focus {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    /* SECTION: Developer Articles */
+    devsite-content .devsite-breadcrumb-link:hover,
+    devsite-content .devsite-breadcrumb-link:focus {
+        color: /*[[ac-primary]]*/
+    }
+
+    devsite-selector {
+        border-color: /*[[bg-9]]*/
+    }
+
+    devsite-selector devsite-tabs[connected] {
+        border-color: /*[[bg-9]]*/
+    }
+
+    devsite-selector devsite-tabs tab[active] a::after {
+        background: /*[[ac-primary]]*/
+    }
+
+    /* SECTION: Developer Articles Book Nav */
+    .devsite-book-nav-bg {
+        background: /*[[bg-6]]*/
+    }
+
+    .devsite-nav-active,
+    .devsite-nav-active.devsite-nav-title,
+    .devsite-nav-active.devsite-nav-title > .devsite-nav-icon::before,
+    .devsite-nav-deprecated .devsite-nav-active.devsite-nav-title {
+        color: /*[[ac-primary]]*/
+    }
+
+    .devsite-nav-title[href]:hover,
+    .devsite-nav-title[href]:focus {
+        color: /*[[ac-primary]]*/
+    }
+
+    .devsite-nav-title,
+    .devsite-nav-heading > .devsite-nav-title {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    devsite-content .devsite-breadcrumb-link {
+        color: /*[[fg-primary]]*/
+    }
+
+    body[theme=android-theme][layout=docs],
+    body[theme=android-theme] .devsite-book-nav-bg::after {
+        background: /*[[bg-0]]*/
+    }
+
+    .devsite-nav-accordion {
+        border-color: /*[[bg-0]]*/
+    }
+
+    .devsite-future-version,
+    .devsite-future-version * {
+        color: /*[[fg-disabled]]*/
+    }
+
+    /* SECTION: Developer Articles Header */
+    body[theme=android-theme] devsite-tabs.lower-tabs a {
+        color: /*[[fg-primary]]*/
+    }
+
+    body[layout=docs] .devsite-article {
+        background: /*[[bg-2]]*/
+    }
+
+    body[theme=android-theme] .devsite-collapsible-section {
+        background: /*[[bg-9]]*/
+    }
+
+    body[theme=android-theme] devsite-tabs.lower-tabs a {
+        background: /*[[bg-9]]*/
+    }
+
+    body[theme=android-theme] devsite-tabs.lower-tabs a:hover,
+    body[theme=android-theme] devsite-tabs.lower-tabs a:focus {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    body[theme=android-theme] devsite-tabs.lower-tabs tab[active] > a {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    body[theme=android-theme] devsite-header .devsite-product-description-row .devsite-breadcrumb-link,
+    body[theme=android-theme] devsite-header .devsite-product-description-row .devsite-breadcrumb-guillemet {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    /* SECTION: Developer Articles main content */
+    h1,
+    .devsite-landing-row h2,
+    .devsite-landing-row-large-headings .devsite-landing-row-item-description h3 {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .devsite-banner-announcement,
+    .devsite-banner-announcement :link,
+    .devsite-banner-announcement :visited {
+        background: /*[[ac-secondary]]*/
+    }
+
+    .devsite-steps .steps-link-title {
+        color: /*[[ac-primary]]*/
+    }
+
+    .devsite-steps .steps-link-arrow {
+        color: /*[[ac-primary]]*/
+    }
+
+    .devsite-steps .steps-link-direction {
+        color: /*[[fg-primary]]*/
+    }
+
+    body[theme=android-theme] devsite-toc > .devsite-nav-list {
+        border-color: /*[[ac-primary-alt]]*/
+    }
+
+    body[theme=android-theme] devsite-tabs.lower-tabs tab[active] > a::after {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    devsite-code pre .str,
+    devsite-code pre .atv {
+        color: /*[[ac-primary-alt]]*/
+    }
+
+    [layout=docs] h2 {
+        border-color: /*[[fg-primary]]*/
+    }
+
+    devsite-page-rating[position=footer] {
+        border-color: /*[[bg-9]]*/
+    }
+
+    .objective,
+    .objective code,
+    .objective :link,
+    .objective :visited,
+    .success,
+    .success code,
+    .success :link,
+    .success :visited {
+        background: /*[[ac-primary-alt]]*/;
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    /* SECTION: Developer Articles Footer */
+    devsite-footer-promos {
+        background: /*[[bg-0]]*/
+    }
+
+    devsite-footer-linkboxes {
+        background: /*[[bg-0]]*/
+    }
+
+    devsite-footer-utility {
+        background: /*[[bg-0]]*/
+    }
+
+    devsite-footer-linkboxes .devsite-footer-linkbox-link {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-footer-utility .devsite-footer-sites-link {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-footer-utility .devsite-footer-utility-link {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-footer-utility .devsite-footer-sites-link:hover,
+    devsite-footer-utility .devsite-footer-sites-link:focus {
+        color: /*[[ac-primary]]*/
+    }
+
+    devsite-footer-linkboxes .devsite-footer-linkbox-link:hover,
+    devsite-footer-linkboxes .devsite-footer-linkbox-link:focus {
+        color: /*[[ac-primary]]*/
+    }
+
+    devsite-footer-utility .devsite-footer-utility-link:hover,
+    devsite-footer-utility .devsite-footer-utility-link:focus {
+        color: /*[[ac-primary]]*/
+    }
+
+    devsite-footer-promos {
+        border-color: /*[[bg-9]]*/
+    }
+
+    devsite-footer-promos .devsite-footer-promos-list {
+        border-color: /*[[bg-9]]*/
+    }
+
+    devsite-footer-utility .devsite-footer-sites {
+        border-color: /*[[bg-9]]*/
+    }
+
+    devsite-footer-utility nav {
+        border-color: /*[[bg-9]]*/
+    }
+
+    /* SECTION: Tables */
+    tr {
+        background: /*[[ac-secondary]]*/;
+        border-color: /*[[bg-0]]*/
+    }
+
+    td,
+    td code {
+        color: /*[[fg-primary]]*/
+    }
+    th,
+    th code {
+        color: /*[[fg-primary]]*/
+    }
+    td,
+    table.responsive tr:not(.alt) td td:first-child,
+    table.responsive td tr:not(.alt) td:first-child {
+        background: /*[[bg-9]]*/
+    }
+
+    table.responsive tr:not(.alt) td:first-child {
+        background: /*[[bg-6]]*/
+    }
+
+    .columns th {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .columns code,
+    .columns pre {
+        background: /*[[bg-9]]*/
+    }
+
+    table.orange tr {
+        background: /*[[ac-secondary]]*/;
+        border-color: /*[[ac-secondary]]*/
+    }
+
+    /* SECTION: Platform Overview Landing Page */
+    .devsite-landing-row:not([background]) {
+        background: /*[[bg-9]]*/
+    }
+
+    .devsite-landing-row:not([background]).dac-landing-row-bg-blob-8,
+    [background=grey] {
+        background: /*[[bg-7]]*/
+    }
+
+    [background=white] {
+        background: /*[[bg-9]]*/
+    }
+
+    .devsite-landing-row-item-description-content,
+    .devsite-landing-row:not([background]):not([foreground]) .devsite-landing-row-description {
+        color: /*[[fg-primary]]*/
+    }
+
+    [background=white] h2,
+    [background=white]:not(.devsite-landing-row-cards) h3,
+    [background=white]:not([foreground]):not(.devsite-landing-row-cards) {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    /* SECTION: Releases Landing Page */
+    .devsite-landing-row h1,
+    .devsite-landing-row h2,
+    .devsite-landing-row-item h2,
+    .devsite-landing-row-item h3,
+    .dac-landing-row-hero h2 {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .dac-outline-button {
+        border-color: /*[[ac-primary-alt]]*/
+    }
+
+    .dac-outline-button:hover,
+    .dac-outline-button:focus {
+        background: /*[[ac-primary-alt]]*/
+    }
+
+    devsite-dynamic-content .devsite-card {
+        background: /*[[bg-8]]*/
+    }
+
+    devsite-dynamic-content .devsite-card h3 {
+        color: /*[[fg-primary]]*/
+    }
+
+    .dac-featured-cards .devsite-landing-row-column {
+        background: /*[[bg-8]]*/
+    }
+
+    /* SECTION: Releases Book Nav */
+    devsite-book-nav .devsite-nav-list > .devsite-nav-heading:not(.devsite-nav-divider) {
+        border-color: /*[[bg-0]]*/
+    }
+
+    /* SECTION: Documentation -> Reference */
+    .kotlin-aside {
+        background: /*[[bg-7]]*/;
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-accordion) .devsite-nav-title {
+        color: /*[[fg-primary]]*/;
+        border-color: /*[[bg-0]]*/
+    }
+
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-active) .devsite-nav-title:hover,
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item:not(.devsite-nav-active) .devsite-nav-title:focus {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    devsite-book-nav .devsite-nav-list > .devsite-nav-item.devsite-nav-heading:not(.devsite-nav-accordion) .devsite-nav-title {
+        background: /*[[bg-3]]*/;
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .devsite-nav-accordion > devsite-expandable-nav > .devsite-nav-title {
+        color: /*[[fg-primary-emph]]*/
+    }
+
+    .api-level a,
+    .api-level a:active,
+    .api-level a:visited {
+        color: /*[[fg-primary]]*/
+    }
+
+    devsite-select .devsite-select-list {
+        background: /*[[bg-9]]*/;
+        border-color: /*[[bg-0]]*/
+    }
+
+    devsite-select .devsite-select-item:hover,
+    devsite-select .devsite-select-item:focus {
+        background: /*[[bg-5]]*/
+    }
+}

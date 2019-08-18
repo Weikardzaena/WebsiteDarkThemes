@@ -17,7 +17,7 @@
 /* ==UserStyle==
 @name           Google Search Darcula
 @namespace      github.com/openstyles/stylus
-@version        0.0.4
+@version        0.0.5
 @description    IntelliJ's Darcula theme applied to Google Search Results
 @author         Weikardzaena
 @license        Apache 2.0
@@ -105,17 +105,28 @@
     /* Buttons */
     /***********/
     .ab_button {
-        color: /*[[silver-primary]]*/ !important;
-        background-color: /*[[gray-secondary]]*/ !important;
-        background: -webkit-linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
-        background: -moz-linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
-        background: -o-linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
-        background: linear-gradient(top, /*[[gray-secondary]]*/, /*[[gray-primary]]*/) !important;
+        color: /*[[silver-primary]]*/
+        !important;
+        background-color: /*[[gray-secondary]]*/
+        !important;
+        background: -webkit-linear-gradient(top, /*[[gray-secondary]]*/
+        , /*[[gray-primary]]*/
+        ) !important;
+        background: -moz-linear-gradient(top, /*[[gray-secondary]]*/
+        , /*[[gray-primary]]*/
+        ) !important;
+        background: -o-linear-gradient(top, /*[[gray-secondary]]*/
+        , /*[[gray-primary]]*/
+        ) !important;
+        background: linear-gradient(top, /*[[gray-secondary]]*/
+        , /*[[gray-primary]]*/
+        ) !important;
         border-color: /*[[gray-emphasis]]*/;
     }
 
     .ab_button:hover {
-        border-color: /*[[gray-middle]]*/ !important;
+        border-color: /*[[gray-middle]]*/
+        !important;
     }
 
     /**************/
@@ -178,7 +189,7 @@
     }
 
     #hdtb {
-        border-bottom: 1px solid /*[[gray-middle]]*/
+        border-bottom: 1px solid/*[[gray-middle]]*/
         !important;
     }
 
@@ -187,7 +198,7 @@
     /********************/
     .cJzOGc,
     #hdtb-msb .hdtb-mitem.hdtb-msel,
-    #hdtb-msb .hdtb-mitem.hdtb-msel-pre{
+    #hdtb-msb .hdtb-mitem.hdtb-msel-pre {
         color: /*[[green-primary]]*/
         !important;
         border-bottom-color: /*[[green-primary]]*/
@@ -249,20 +260,21 @@
     .EPLo7b,
     .AUiS2,
     g-inner-card,
-    .wlqJjf.gws-local-riddler__banner-shown{
+    .wlqJjf.gws-local-riddler__banner-shown {
         border-color: /*[[gray-middle]]*/
         !important;
     }
-    
+
     .exp-outline,
     .kp-blk,
     .qmv19b,
     .rl_item_base,
-    g-inner-card {
+    g-inner-card,
+    .yMspv {
         background-color: /*[[gray-secondary]]*/
         !important;
     }
-    
+
     .y8Jpof:hover {
         background-color: /*[[gray-primary]]*/
     }
@@ -270,7 +282,8 @@
     /***********************/
     /* MAIN RESULTS - NEWS */
     /***********************/
-    .e8fRJf, .wqg8ad {
+    .e8fRJf,
+    .wqg8ad {
         color: /*[[green-primary]]*/
         !important;
     }
