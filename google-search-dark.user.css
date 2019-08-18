@@ -269,7 +269,8 @@
     .kp-blk,
     .qmv19b,
     .rl_item_base,
-    g-inner-card {
+    g-inner-card,
+    .yMspv {
         background-color: /*[[gray-secondary]]*/
         !important;
     }
