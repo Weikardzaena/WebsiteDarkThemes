@@ -6,16 +6,16 @@
 @author         Weikardzaena
 @license        Apache 2.0
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/google-search-dark.user.css
-@advanced color bg-00 "z=00dp background color" #141d25
-@advanced color bg-01 "z=01dp background color" #1b2930
-@advanced color bg-02 "z=02dp background color" #212d34
-@advanced color bg-03 "z=03dp background color" #232f36
-@advanced color bg-04 "z=04dp background color" #253139
-@advanced color bg-06 "z=06dp background color" #2a363d
-@advanced color bg-08 "z=08dp background color" #2d3840
-@advanced color bg-12 "z=12dp background color" #323d44
-@advanced color bg-16 "z=16dp background color" #333f45
-@advanced color bg-24 "z=24dp background color" #3a4148
+@advanced color bg-00 "z=00dp background color" #121212
+@advanced color bg-01 "z=01dp background color" #1d1d1d
+@advanced color bg-02 "z=02dp background color" #222222
+@advanced color bg-03 "z=03dp background color" #242424
+@advanced color bg-04 "z=04dp background color" #272727
+@advanced color bg-06 "z=06dp background color" #2c2c2c
+@advanced color bg-08 "z=08dp background color" #2e2e2e
+@advanced color bg-12 "z=12dp background color" #323232
+@advanced color bg-16 "z=16dp background color" #353535
+@advanced color bg-24 "z=24dp background color" #373737
 @advanced color focused "Overlay color for focused/hovered elements (24% opacity)" #ffffff3d
 @advanced color fg-p "Primary FG color" #ffffff9a
 @advanced color fg-emph "Primary FG color for emphasis" #ffffffdf
