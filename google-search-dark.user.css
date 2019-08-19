@@ -1,80 +1,137 @@
-/*
- * Copyright 2000-2013 JetBrains s.r.o.
- * Modifications Copyright (c) 2018 G. Nikolai Kotula
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 /* ==UserStyle==
-@name           Google Search Darcula
+@name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
 @version        0.0.5
-@description    IntelliJ's Darcula theme applied to Google Search Results
+@description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/google-search-dark.user.css
-@advanced color gray-primary "Primary Gray color" #2a2a2a
-@advanced color gray-emphasis "Gray color for emphasis" #222222
-@advanced color gray-secondary "Gray accent" #323232
-@advanced color gray-middle "Middle Gray color" #808080
-@advanced color green-primary "Primary Green color" #77c256
-@advanced color green-subtle "Subtle Green color" #77c25633
-@advanced color orange-primary "Primary Orange color" #cc7832
-@advanced color orange-secondary "Orange accent" #febb5b
-@advanced color purple-primary "Primary Purple color" #9775aa
-@advanced color red-primary "Primary Red color" #bc3e3c
-@advanced color silver-primary "Primary Silver color" #a8b7c8
-@advanced color silver-subtle "Primary Silver color with transparency" #a8b7c8cc
-@advanced color yellow-primary "Primary Yellow color" #ffc66d
+@advanced color bg-00 "z=00dp background color" #141d25
+@advanced color bg-01 "z=01dp background color" #1b2930
+@advanced color bg-02 "z=02dp background color" #212d34
+@advanced color bg-03 "z=03dp background color" #232f36
+@advanced color bg-04 "z=04dp background color" #253139
+@advanced color bg-06 "z=06dp background color" #2a363d
+@advanced color bg-08 "z=08dp background color" #2d3840
+@advanced color bg-12 "z=12dp background color" #323d44
+@advanced color bg-16 "z=16dp background color" #333f45
+@advanced color bg-24 "z=24dp background color" #3a4148
+@advanced color focused "Overlay color for focused/hovered elements (24% opacity)" #ffffff3d
+@advanced color fg-p "Primary FG color" #ffffff9a
+@advanced color fg-emph "Primary FG color for emphasis" #ffffffdf
+@advanced color fg-disabled "Primary FG color for emphasis" #ffffff61
+@advanced color fg-on-p "FG color on primary accent" #000000
+@advanced color fg-on-s "FG color on secondary accent" #000000
+@advanced color fg-on-e "FG color on error accent" #ffffff
+@advanced color ac-p "Primary accent color" #61bbfe
+@advanced color ac-p-hov "Primary accent color when hovering" #e3f3fe
+@advanced color ac-p-alt "Primary alternate accent color" #a3d597
+@advanced color ac-s "Secondary accent color" #d392c6
+@advanced color error "Error bg color" #ba453f
 ==/UserStyle== */
-@-moz-document regexp("^https?:\/\/(www\.)?google\.com(?!\/maps)(?!\/flights).*") {
-
-    /********/
-    /* CORE */
-    /********/
-    html,
+@-moz-document regexp("^https:\\/\\/www\\.google\\.com(?!\\/maps)(?!\\/flights)((?!tbm=).)*$") {
+    /* =============== */
+    /* SECTION: Global */
+    /* =============== */
     body {
-        background-color: /*[[gray-primary]]*/
-        !important;
+        background: /*[[bg-00]]*/;
+        color: /*[[fg-p]]*/
     }
 
-    html,
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: /*[[silver-primary]]*/
-        !important;
-    }
-
-    a,
-    .flt,
-    .wUrVib,
-    .EZRelc,
-    .xXEKkb,
+    /* Links */
     a:link,
-    a.mblink,
-    a.flt,
-    a.fl:link,
-    .fl a,
-    .gl a:link,
-    .mblink b {
-        color: /*[[orange-primary]]*/
-        !important;
+    .w,
+    #prs a:visited,
+    #prs a:active,
+    .q:active,
+    .q:visited,
+    .kl:active,
+    .tbotu {
+        color: /*[[ac-p]]*/
+    }
+    .mblink:visited,
+    a:visited {
+        color: /*[[ac-s]]*/
+    }
+    .a,
+    cite,
+    cite a:link,
+    cite a:visited,
+    .cite,
+    .cite:link,
+    #nygTcd > i,
+    .bc a:link {
+        color: /*[[ac-p-alt]]*/
     }
 
+    /* Expando arrow */
+    .GHDvEf,
+    .GHDvEf:hover,
+    .GHDvEf.selected,
+    .GHDvEf.selected:hover {
+        background: transparent;
+    }
+    .action-menu .mn-dwn-arw {
+        border-color: transparent;
+        border-top-color: /*[[ac-p-alt]]*/
+    }
+    .action-menu:hover .mn-dwn-arw {
+        border-color: transparent;
+        border-top-color: /*[[ac-p]]*/
+    }
+
+    /* =================== */
+    /* SECTION: Search bar */
+    /* =================== */
+    .RNNXgb {
+        background: /*[[bg-00]]*/;
+        border: black
+    }
+    .aajZCb {
+        background: /*[[bg-00]]*/;
+        box-shadow: 0px 4px 6px 0 black;
+    }
+    .emcav .RNNXgb {
+        box-shadow: 0px 1px 6px 0 black;
+    }
+    .gLFyf {
+        color: /*[[fg-p]]*/
+    }
+    .sbl1 {
+        color: /*[[fg-p]]*/;
+    }
+    .sbhl {
+        background: /*[[focused]]*/;
+    }
+    .sbhl .sbl1 {
+        color: /*[[fg-emph]]*/
+    }
+    .xtSCL {
+        border-top-color: black
+    }
+
+    /* ======================= */
+    /* SECTION: Results header */
+    /* ======================= */
+    #appbar {
+        background: /*[[bg-00]]*/
+    }
+
+    /* "All," "Maps," "News," etc. header */
+    #hdtbSum {
+        background: /*[[bg-04]]*/
+    }
+    #hdtb {
+        border-bottom-color: black;
+        box-shadow: 0px 0px 4px black
+    }
+    #hdtb .hdtb-mitem a {
+        color: /*[[fg-p]]*/
+    }
+    #hdtb-msb .hdtb-mitem.hdtb-msel {
+        color: /*[[ac-p]]*/;
+        border-bottom-color: /*[[ac-p]]*/
+    }
     .hdtbItm label:hover,
     .hdtbItm a:hover,
     #hdtb-more-mn a:hover,
@@ -82,265 +139,239 @@
     .hdtb-mn-hd:hover,
     #hdtb-more:hover,
     #hdtb-tls:hover {
-        color: white !important;
+        color: /*[[ac-p]]*/
+    }
+    #hdtb-msb #hdtb-more,
+    #hdtb-msb #hdtb-tls {
+        color: /*[[fg-p]]*/
+    }
+    #hdtb-tls:hover {
+        background: /*[[focused]]*/;
+        border: none;
+    }
+    #hdtb-msb .hdtb-tl-sel,
+    #hdtb-msb .hdtb-tl-sel:hover {
+        background: /*[[ac-p]]*/;
+        color: /*[[fg-on-p]]*/;
+        border: none;
+    }
+    #hdtb-msb #hdtb-tls.hdtb-tl-sel {
+        color: /*[[fg-on-p]]*/
     }
 
-    a:visited,
-    a:visited h1,
-    a:visited h2,
-    a:visited h3,
-    a:visited h4,
-    a:visited h5,
-    a:visited h6 {
-        color: /*[[purple-primary]]*/
+    /* "More" dropdown */
+    .cF4V5c {
+        background: /*[[bg-24]]*/;
+        box-shadow: 0px 0px 6px 1px black
+    }
+    .il8Sef a.f9UGee {
+        color: /*[[fg-p]]*/
+    }
+    .f9UGee.AchQod {
+        background: /*[[focused]]*/
+    }
+    .il8Sef a.f9UGee.AchQod {
+        color: /*[[fg-emph]]*/
+    }
+
+    /* Very top of the search results page, behind the Google logo */
+    .sfbg.nojsv {
+        background: /*[[bg-04]]*/
+    }
+
+    .jsrp.mdm.minidiv {
+        box-shadow: 0px 10px 4px black;
+    }
+
+    /* ===================== */
+    /* SECTION: Main results */
+    /* ===================== */
+    /* Result stats at top of page */
+    #resultStats {
+        color: /*[[fg-disabled]]*/
+    }
+
+    /* Tools dropdowns */
+    .hdtb-mn-hd {
+        color: /*[[fg-p]]*/
+    }
+    .hdtb-mn-hd:hover .mn-dwn-arw,
+    #hdtb-more:hover .mn-dwn-arw {
+        border-top-color: /*[[ac-p]]*/
+    }
+    .hdtb-mn-o,
+    .hdtb-mn-c {
+        background: /*[[bg-24]]*/;
+    }
+    .hdtbItm {
+        background: /*[[bg-24]]*/;
+    }
+    .hdtbItm.hdtbSel,
+    #hdtb .hdtbItm a,
+    #hdtb-more-mn a,
+    #cdrlnk {
+        color: /*[[fg-p]]*/
+    }
+    #hdtb-more-mn a:hover,
+    .hdtbItm.hdtbSel:hover,
+    .hdtbItm a:hover,
+    #cdrlnk:hover {
+        background: /*[[bg-04]]*/;
+        color: /*[[fg-emph]]*/
+    }
+    .hdtbItm.hdtbSel {
+        background: /*[[bg-04]]*/;
+        color: /*[[fg-emph]]*/
+    }
+    #cdr_opt {
+        background: /*[[bg-24]]*/
+    }
+    .cdr_sep {
+        border-color: black
+    }
+
+    /* "More" FABs */
+    g-fab {
+        background: /*[[ac-s]]*/
+        !important;
+        color: /*[[fg-on-s]]*/
         !important;
     }
-
-    cite {
-        color: /*[[orange-secondary]]*/
-        !important;
+    .CNf3nf {
+        border-color: transparent !important;
     }
 
-    /***********/
-    /* Buttons */
-    /***********/
-    .ab_button {
-        color: /*[[silver-primary]]*/
-        !important;
-        background-color: /*[[gray-secondary]]*/
-        !important;
-        background: -webkit-linear-gradient(top, /*[[gray-secondary]]*/
-        , /*[[gray-primary]]*/
-        ) !important;
-        background: -moz-linear-gradient(top, /*[[gray-secondary]]*/
-        , /*[[gray-primary]]*/
-        ) !important;
-        background: -o-linear-gradient(top, /*[[gray-secondary]]*/
-        , /*[[gray-primary]]*/
-        ) !important;
-        background: linear-gradient(top, /*[[gray-secondary]]*/
-        , /*[[gray-primary]]*/
-        ) !important;
-        border-color: /*[[gray-emphasis]]*/;
+    /* Main result cards */
+    .kp-blk {
+        background: /*[[bg-01]]*/;
+        border: none;
+        box-shadow: 0px 0px 5px black;
     }
 
-    .ab_button:hover {
-        border-color: /*[[gray-middle]]*/
-        !important;
+    /* Search result summary */
+    .s {
+        color: /*[[fg-p]]*/
+    }
+    .s .st em,
+    .st.s.std em {
+        color: /*[[fg-p]]*/
     }
 
-    /**************/
-    /* SEARCH BAR */
-    /**************/
-    .RNNXgb,
-    .aajZCb,
-    .sbibod,
-    .sbib_a {
-        background-color: /*[[gray-secondary]]*/
-        !important;
+    /* Trending story cards */
+    g-inner-card {
+        background: /*[[bg-01]]*/
+    }
+    .cv2VAd {
+        border: none;
+        box-shadow: 0px 0px 5px black;
+    }
+    .wUrVib {
+        color: /*[[ac-p]]*/
+    }
+    .EZRelc {
+        color: /*[[ac-p]]*/
     }
 
-    .RNNXgb {
-        border-color: /*[[gray-middle]]*/
-        !important;
+    /* After clicking a link, the surrounding "people also search for" tile */
+    .exp-outline {
+        background: /*[[bg-01]]*/;
+        border: none;
+        box-shadow: 0px 0px 5px black;
     }
-
-    .RNNXgb:hover,
-    .sbfc {
-        border-color: #00000000 !important;
+    .eJ7tvc {
+        color: /*[[fg-p]]*/
     }
-
-    /*******************/
-    /* Main Search Bar */
-    /*******************/
-    .gLFyf {
-        color: /*[[silver-primary]]*/
-        !important;
-    }
-
-    /***********************/
-    /* Search Bar Dropdown */
-    /***********************/
-    .sbl1 {
-        color: /*[[silver-subtle]]*/
-        !important;
-    }
-
-    .sbct.sbhl {
-        background-color: /*[[green-subtle]]*/
-        !important;
-    }
-
-    /***********/
-    /* APP BAR */
-    /***********/
-    #appbar,
-    #hdtbSum,
-    .sfbgg {
-        background-color: /*[[gray-primary]]*/
-        !important;
-    }
-
-    #hdtb,
-    #hdtb-msb #hdtb-tls,
-    #hdtb .hdtb-mitem a {
-        color: /*[[silver-primary]]*/
-        !important;
-    }
-
-    #hdtb {
-        border-bottom: 1px solid/*[[gray-middle]]*/
-        !important;
-    }
-
-    /********************/
-    /* Page/tools links */
-    /********************/
-    .cJzOGc,
-    #hdtb-msb .hdtb-mitem.hdtb-msel,
-    #hdtb-msb .hdtb-mitem.hdtb-msel-pre {
-        color: /*[[green-primary]]*/
-        !important;
-        border-bottom-color: /*[[green-primary]]*/
-        !important;
-    }
-
-    /********************/
-    /* Floating app bar */
-    /********************/
-    .minidiv .sfbg {
-        background-color: /*[[gray-primary]]*/
-        !important;
-        box-shadow: 0 1px 6px 0 #00000077 !important;
-    }
-
-    /**********************/
-    /* MAIN RESULTS - ALL */
-    /**********************/
-    .s,
-    .st,
-    .garHBe,
-    .Ss2Faf,
-    .oaSpFd,
-    .JolIg,
-    .eJ7tvc,
-    .kno-ecr-pt,
-    .gJBeNe,
-    .cwUqwd,
-    .Y28wmf,
-    .w8qArf .fl,
-    .rl_item_base .title,
-    .s .st em {
-        color: /*[[silver-primary]]*/
-        !important;
-    }
-
-    .f,
-    .wwUB2c,
-    .kX21rb,
-    .ads-ad,
-    .ads-creative,
-    .ads-creative b,
-    .y8Jpof .LrzXr,
-    .f a:link {
-        color: /*[[gray-middle]]*/
-        !important;
-    }
-
-    #resultsStats,
-    .P1usbc {
-        color: /*[[gray-middle]]*/
-        !important;
-    }
-
-    .exp-outline,
-    .kp-blk,
-    .qmv19b,
-    .rl_item_base,
-    .EPLo7b,
-    .AUiS2,
-    g-inner-card,
-    .wlqJjf.gws-local-riddler__banner-shown {
-        border-color: /*[[gray-middle]]*/
-        !important;
-    }
-
-    .exp-outline,
-    .kp-blk,
-    .qmv19b,
-    .rl_item_base,
-    g-inner-card,
-    .yMspv {
-        background-color: /*[[gray-secondary]]*/
-        !important;
-    }
-
-    .y8Jpof:hover {
-        background-color: /*[[gray-primary]]*/
-    }
-
-    /***********************/
-    /* MAIN RESULTS - NEWS */
-    /***********************/
-    .e8fRJf,
-    .wqg8ad {
-        color: /*[[green-primary]]*/
-        !important;
-    }
-
-    /****************************/
-    /* "Searches Related To..." */
-    /****************************/
-    #brs,
-    #brs .med {
-        color: /*[[silver-primary]]*/
-        !important;
-    }
-
-    /**************************/
-    /* PEOPLE ALSO SEARCH FOR */
-    /**************************/
-    /* 'X' button */
     .XCKyNd {
-        background-color: /*[[red-primary]]*/
-        !important;
-        opacity: 1;
+        background-color: /*[[error]]*/;
         padding: 8px;
+        margin: 2px;
+        opacity: 1;
     }
 
-    /**********/
-    /* FOOTER */
-    /**********/
+    /* Right-side cards */
+    .kno-ecr-pt {
+        color: /*[[fg-emph]]*/
+    }
+    a.fl:link,
+    .fl a,
+    .flt,
+    a.flt,
+    .gl a:link,
+    a.mblink,
+    .mblink b {
+        color: /*[[ac-p]]*/
+    }
+    .xXEKkb {
+        color: /*[[ac-p]]*/
+        !important;
+    }
+    .cwUqwd {
+        color: /*[[fg-p]]*/
+    }
+    .y8Jpof:hover {
+        background-color: /*[[focused]]*/
+    }
+    .kp-blk .xpdclose .farUxc,
+    .kp-blk .xpdopen .mJ2Mod {
+        border-color: black
+    }
+
+    /* All card titles */
+    .JolIg,
+    .garHBe {
+        color: /*[[fg-emph]]*/
+    }
+
+    /* Link/share icon */
+    .rsir2d {
+        color: /*[[fg-p]]*/
+    }
+
+    /* "People also search for..." */
+    .cbphWd {
+        border-color: black
+    }
+    .vp45yf {
+        color: /*[[fg-p]]*/
+    }
+
+    /* Related searches */
+    #brs .med {
+        color: /*[[fg-p]]*/
+    }
+    .oaSpFd {
+        color: /*[[fg-p]]*/
+    }
+
+    /* Searches footer */
+    #foot #navcnt a {
+        color: /*[[ac-p]]*/
+    }
+    #foot #navcnt .cur {
+        color: /*[[ac-s]]*/
+    }
+
+    /* Page footer */
     #fbar {
-        background-color: /*[[gray-secondary]]*/
-        !important;
+        background: /*[[bg-01]]*/;
+        border-color: black;
     }
-
-    /*****************/
-    /* Location info */
-    /*****************/
-    #swml-loc {
-        color: /*[[silver-primary]]*/
-        !important;
+    .smiUbb {
+        color: /*[[fg-p]]*/
     }
-
-    .smiUbb,
+    #Wprf1b {
+        color: /*[[fg-emph]]*/
+    }
     .smiUbb a,
     #swml a {
-        color: /*[[gray-middle]]*/
-        !important;
+        color: /*[[fg-disabled]]*/
     }
-
-    /*******************************/
-    /* Search results page numbers */
-    /*******************************/
-    #foot #navcnt .cur {
-        color: /*[[purple-primary]]*/
-        !important;
+    .smiUbb a:hover,
+    #swml a:hover {
+        color: /*[[fg-emph]]*/
     }
-
-    #foot #navcnt a {
-        color: /*[[yellow-primary]]*/
-        !important;
+    .fbar a:hover,
+    #fsett a:hover {
+        color: /*[[ac-p-hov]]*/
     }
 }
