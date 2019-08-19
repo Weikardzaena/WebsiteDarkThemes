@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.5
+@version        0.0.6
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -64,6 +64,11 @@
         color: /*[[ac-p-alt]]*/
     }
 
+    input {
+        background: /*[[bg-00]]*/;
+        color: /*[[fg-p]]*/
+    }
+
     /* Expando arrow */
     .GHDvEf,
     .GHDvEf:hover,
@@ -80,12 +85,16 @@
         border-top-color: /*[[ac-p]]*/
     }
 
+
     /* =================== */
     /* SECTION: Search bar */
     /* =================== */
     .RNNXgb {
         background: /*[[bg-00]]*/;
         border: black
+    }
+    .rINcab {
+        color: /*[[ac-p]]*/
     }
     .aajZCb {
         background: /*[[bg-00]]*/;
@@ -236,9 +245,16 @@
         !important;
         color: /*[[fg-on-s]]*/
         !important;
+        box-shadow: 0 0 5px 3px black !important;
     }
     .CNf3nf {
         border-color: transparent !important;
+    }
+    .Lu0opc {
+        opacity: 1 !important;
+    }
+    g-fab .z1asCe {
+        fill: /*[[fg-on-p]]*/
     }
 
     /* Main result cards */
@@ -269,7 +285,63 @@
         color: /*[[ac-p]]*/
     }
     .EZRelc {
+        fill: /*[[ac-p]]*/;
         color: /*[[ac-p]]*/
+    }
+
+    /* Maps cards */
+    .vk_c,
+    .vk_cxp {
+        background: /*[[bg-01]]*/
+    }
+    .ccBEnf {
+        border-color: black
+    }
+    .vk_c,
+    .vk_cxp,
+    #rhs .fIcnad {
+        border-color: black
+    }
+    .wYWDAd {
+        border-color: black
+    }
+    div.AEprdc.vk_c {
+        box-shadow: 0px 0px 5px black
+    }
+    .yyjhs {
+        background: /*[[bg-08]]*/
+    }
+    .dbg0pd {
+        color: /*[[fg-emph]]*/
+    }
+    .uMdZh {
+        color: /*[[fg-p]]*/
+    }
+    .uMdZh:hover {
+        background: /*[[focused]]*/
+    }
+    .rllt__wrapped > span {
+        color: /*[[error]]*/
+        !important;
+    }
+    .F7IIOc {
+        color: /*[[fg-p]]*/
+    }
+    .F7IIOc.rlf__open:not(.rlf__applied),
+    .F7IIOc:not(.rlf__applied):hover {
+        color: /*[[fg-emph]]*/
+    }
+    .FZaw6b {
+        border-top-color: /*[[fg-p]]*/;
+        border-bottom-color: /*[[fg-p]]*/;
+    }
+    .F7IIOc.rlf__open:not(.rlf__applied) .FZaw6b,
+    .F7IIOc:not(.rlf__applied):hover .FZaw6b {
+        border-top-color: /*[[fg-p]]*/;
+        border-bottom-color: /*[[fg-p]]*/;
+    }
+    .tGgE5d {
+        border-color: black;
     }
 
     /* After clicking a link, the surrounding "people also search for" tile */
@@ -286,6 +358,97 @@
         padding: 8px;
         margin: 2px;
         opacity: 1;
+    }
+
+    /* Dictionary tile */
+    .vk_gy {
+        color: /*[[fg-disabled]]*/
+        !important;
+    }
+    .vk_bk {
+        color: /*[[fg-p]]*/
+        !important;
+    }
+    .iXqz2e .exp-txt-c {
+        color: /*[[fg-p]]*/
+    }
+    .lr_dct_lbl_box {
+        background: /*[[ac-s]]*/;
+        color: /*[[fg-on-s]]*/
+    }
+    .gJBeNe {
+        color: /*[[fg-emph]]*/
+    }
+    .ElpxJd {
+        background: /*[[bg-12]]*/;
+        color: /*[[fg-p]]*/;
+        border: none;
+        box-shadow: 0 1px 2px black;
+    }
+    .lr_dct_trns_sel:hover {
+        background: /*[[focused]]*/;
+        border: none;
+        box-shadow: 0 1px 2px black;
+    }
+    .ElpxJd > option {
+        background: /*[[bg-08]]*/
+    }
+    .pVFdhc {
+        background: black
+    }
+    .dw-sb-cont {
+        background: /*[[bg-00]]*/
+    }
+    .dw-sb-cont .dw-sbi {
+        color: /*[[fg-p]]*/;
+        border-color: transparent
+    }
+    .dw-sb-cont .dw-sb-btn {
+        background: /*[[ac-p]]*/;
+        border: none
+    }
+    #dictionary-modules .z1asCe {
+        fill: /*[[fg-on-p]]*/
+    }
+    .vk_ard,
+    .vk_aru {
+        background: black
+    }
+    .vk_arc {
+        border-color: black
+    }
+    .vk_ard:before {
+        border-top-color: black
+    }
+    .vk_ard:after {
+        border-top-color: /*[[ac-s]]*/
+    }
+    .vk_aru:before {
+        border-bottom-color: black
+    }
+    .vk_aru:after {
+        border-bottom-color: /*[[ac-s]]*/
+    }
+
+    /* Map card dropdowns */
+    .czHJJ {
+        background: /*[[bg-24]]*/;
+        border: none;
+        box-shadow: 0 0 5px black
+    }
+    .w3RMhb .zFsEvf {
+        color: /*[[fg-p]]*/
+    }
+    .w3RMhb:hover .zFsEvf {
+        color: /*[[fg-emph]]*/
+    }
+    .w3RMhb:hover {
+        background: /*[[focused]]*/;
+        color: /*[[fg-emph]]*/
+    }
+    .w3RMhb.expanded {
+        background: /*[[ac-s]]*/;
+        color: /*[[fg-on-s]]*/
     }
 
     /* Right-side cards */
@@ -351,7 +514,104 @@
         color: /*[[ac-s]]*/
     }
 
-    /* Page footer */
+    /* Videos suggestions */
+    .cJzOGc {
+        color: /*[[ac-p-alt]]*/
+    }
+    .zECGdd {
+        color: /*[[fg-disabled]]*/
+    }
+
+    /* Picture suggestions */
+    #irl_r_a:hover {
+        color: /*[[ac-s]]*/
+    }
+
+    /* =================== */
+    /* SECTION: Calculator */
+    /* =================== */
+    .fB3vD {
+        color: /*[[fg-p]]*/
+    }
+    .XH1CIc {
+        color: /*[[fg-disabled]]*/
+    }
+    .TIGsTb {
+        border-color: black
+    }
+    .lqyc1.d0jRmd,
+    .d0jRmd {
+        border-color: /*[[ac-p]]*/
+    }
+    .wVudU {
+        background: /*[[bg-01]]*/
+    }
+    .AOvabd,
+    .dxp44d {
+        background: /*[[bg-12]]*/;
+        border-color: transparent;
+        color: /*[[fg-p]]*/;
+        box-shadow: 0 0 4px 1px black
+    }
+    .AOvabd:hover,
+    .dxp44d:hover {
+        background: /*[[focused]]*/
+    }
+    .AOvabd:focus:hover,
+    .dxp44d:focus:hover {
+        background: /*[[focused]]*/;
+        border-color: /*[[ac-s]]*/;
+    }
+    .UUhRt {
+        background: /*[[ac-p]]*/;
+        color: /*[[fg-on-p]]*/;
+        border-color: transparent;
+        box-shadow: 0 0 4px 1px black
+    }
+    .UUhRt:hover {
+        background: /*[[ac-p-alt]]*/
+    }
+    .UUhRt:focus:hover {
+        background: /*[[ac-p-alt]]*/;
+        border-color: /*[[ac-s]]*/;
+    }
+    .MEdqYd,
+    .feqqG {
+        background: /*[[bg-16]]*/;
+        border-color: transparent;
+        color: /*[[fg-p]]*/;
+        box-shadow: 0 0 5px 1px black;
+    }
+    .MEdqYd:hover,
+    .feqqG:hover {
+        background: /*[[focused]]*/
+    }
+    .MEdqYd:focus:hover,
+    .feqqG:focus:hover {
+        background: /*[[focused]]*/;
+        border-color: /*[[ac-s]]*/;
+    }
+    .pno7A.hU1rMc .Tqvz7b,
+    .pno7A.rfUaPd .SwDSDf {
+        color: /*[[ac-p]]*/
+    }
+    .pno7A.rfUaPd .Tqvz7b,
+    .pno7A.hU1rMc .SwDSDf {
+        color: /*[[fg-disabled]]*/
+    }
+    .Lm2Tt {
+        border-color: black
+    }
+    .XDTKBd {
+        color: /*[[fg-disabled]]*/
+    }
+    .ZtnWe {
+        color: /*[[ac-p]]*/
+    }
+
+    /* ==================== */
+    /* SECTION: Page footer */
+    /* ==================== */
     #fbar {
         background: /*[[bg-01]]*/;
         border-color: black;
