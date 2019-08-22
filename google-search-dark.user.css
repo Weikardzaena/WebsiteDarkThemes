@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.7
+@version        0.0.8
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
-@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/google-search-dark.user.css
+@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/develop/google-search-dark.user.css
 @advanced color bg-00 "z=00dp background color" #121212
 @advanced color bg-01 "z=01dp background color" #1d1d1d
 @advanced color bg-02 "z=02dp background color" #222222
