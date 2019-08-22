@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.8
+@version        0.0.9
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -85,26 +85,76 @@
         border-top-color: /*[[ac-p]]*/
     }
 
+    /* ================================ */
+    /* SECTION: www.google.com homepage */
+    /* ================================ */
+    /* Links at top of page */
+    #gb#gb a.gb_d,
+    #gb#gb a.gb_e,
+    #gb#gb span.gb_e {
+        color: /*[[fg-p]]*/
+    }
+    #hptl a {
+        color: /*[[fg-p]]*/
+    }
+
+    /* Search buttons */
+    .jhp input[type="submit"],
+    .sbdd_a input,
+    .gbqfba {
+        background: /*[[bg-12]]*/;
+        border: none;
+        box-shadow: 0 0 5px 1px black;
+        color: /*[[fg-p]]*/
+    }
+    .jhp input[type="submit"]:hover,
+    .sbdd_a input:hover,
+    .gbqfba:hover {
+        background: /*[[focused]]*/;
+        color: /*[[fg-emph]]*/;
+        border: none;
+    }
+    .jhp input[type="submit"],
+    .sbdd_a input,
+    .gbqfba {
+        background: /*[[bg-24]]*/
+    }
+
+    /* Footer */
+    .ftl,
+    #footer a {
+        color: /*[[fg-disabled]]*/
+    }
 
     /* =================== */
     /* SECTION: Search bar */
     /* =================== */
     .RNNXgb {
-        background: /*[[bg-00]]*/;
-        border: black
+        background: /*[[bg-16]]*/;
+        border: none;
+        box-shadow: 0 0 5px 1px black
+    }
+    .RNNXgb:hover,
+    .sbfc .RNNXgb {
+        background: /*[[focused]]*/;
+        box-shadow: 0 0 5px 1px black;
     }
     .rINcab {
         color: /*[[ac-p]]*/
     }
     .aajZCb {
-        background: /*[[bg-00]]*/;
-        box-shadow: 0px 4px 6px 0 black;
+        background: /*[[bg-16]]*/;
+        box-shadow: 0px 4px 5px 1px black;
     }
     .emcav .RNNXgb {
-        box-shadow: 0px 1px 6px 0 black;
+        box-shadow: 0px 1px 5px 1px black;
     }
     .gLFyf {
         color: /*[[fg-p]]*/
+    }
+    .RNNXgb:hover .gLFyf,
+    .gLFyf:focus {
+        color: /*[[fg-emph]]*/;
     }
     .sbl1 {
         color: /*[[fg-p]]*/;
