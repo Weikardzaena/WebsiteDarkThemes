@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.6
+@version        0.0.7
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -430,6 +430,56 @@
         border-bottom-color: /*[[ac-s]]*/
     }
 
+    /* Central food info tile */
+    .Z0LcW {
+        color: /*[[fg-p]]*/
+    }
+    .N6Sb2c {
+        color: /*[[fg-p]]*/
+    }
+    .i29hTd .qLLird {
+        color: /*[[fg-emph]]*/
+    }
+    .i29hTd .kR7nSc {
+        color: /*[[fg-emph]]*/
+    }
+    .shDvCe {
+        color: /*[[fg-disabled]]*/
+    }
+    .k6J3K {
+        border: none;
+        box-shadow: 0 0 3px 1px black
+    }
+    .Cc3NMb,
+    .ZIxWWd {
+        background: /*[[bg-08]]*/;
+        color: /*[[fg-p]]*/;
+    }
+    .E6Cqjb {
+        background: black
+    }
+    .kno-ftr {
+        color: /*[[fg-p]]*/
+    }
+
+    /* Right food info tile */
+    .Ss2Faf {
+        color: /*[[fg-p]]*/
+    }
+    .wwUB2c {
+        color: /*[[fg-disabled]]*/
+    }
+    .AYBNrd {
+        background: /*[[bg-01]]*/;
+        border-color: black
+    }
+    .HIf9ae {
+        background: /*[[bg-01]]*/
+    }
+    .AYBNrd td {
+        border-color: black
+    }
+
     /* Map card dropdowns */
     .czHJJ {
         background: /*[[bg-24]]*/;
@@ -537,7 +587,8 @@
         color: /*[[fg-disabled]]*/
     }
     .TIGsTb {
-        border-color: black
+        border-color: black;
+        background: /*[[bg-01]]*/
     }
     .lqyc1.d0jRmd,
     .d0jRmd {
