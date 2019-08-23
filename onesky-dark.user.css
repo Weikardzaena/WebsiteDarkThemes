@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           OneSky
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.1
 @description    A new userstyle
 @author         Me
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/onesky-dark.user.css
@@ -116,6 +116,7 @@
         color: /*[[ac-primary]]*/
     }
 
+    .modal-content,
     .modal-header,
     .modal-footer,
     .modal textarea,
@@ -737,5 +738,28 @@
     .project-box .project-box-header {
         background: /*[[ac-primary]]*/;
         border-color: /*[[ac-primary-alt]]*/
+    }
+
+    /* SECTION: Phrase Comments Modal */
+    .message-thread-modal .project-info,
+    .new-message-modal .project-info,
+    .comment-thread-modal .project-info {
+        background: /*[[bg-1]]*/;
+        border-color: black;
+    }
+
+    .message-thread-modal .project-info .original-phrase,
+    .message-thread-modal .project-info .translated-phrase,
+    .new-message-modal .project-info .original-phrase,
+    .new-message-modal .project-info .translated-phrase,
+    .comment-thread-modal .project-info .original-phrase,
+    .comment-thread-modal .project-info .translated-phrase {
+        background: /*[[bg-2]]*/
+    }
+
+    .message-thread-modal .message-unit,
+    .new-message-modal .message-unit,
+    .comment-thread-modal .message-unit {
+        border-color: black;
     }
 }
