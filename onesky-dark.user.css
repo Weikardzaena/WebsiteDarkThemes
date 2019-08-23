@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           OneSky
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.0.2
 @description    A new userstyle
 @author         Me
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/onesky-dark.user.css
@@ -760,6 +760,46 @@
     .message-thread-modal .message-unit,
     .new-message-modal .message-unit,
     .comment-thread-modal .message-unit {
+        border-color: black;
+    }
+
+    /* SECTION: Support Modal */
+    .text__c-txt__input___2ZeOl {
+        color: /*[[fg-primary]]*/;
+        background: /*[[bg-2]]*/
+        !important;
+        border: none;
+    }
+    .text__c-txt__label___11SEJ {
+        color: /*[[fg-primary]]*/
+    }
+    .label-uDbS4 {
+        color: /*[[fg-primary]]*/
+    }
+    .rf-CheckboxGroup__checkbox:checked + span:before,
+    .u-userTextColor:not([disabled]) {
+        color: /*[[ac-primary]]*/
+        !important;
+    }
+    .dropzoneChildLabel-137gB {
+        color: /*[[ac-primary]]*/
+    }
+    .Container--dashed-3s9Ji {
+        background: /*[[bg-2]]*/;
+        border-color: /*[[fg-disabled]]*/
+    }
+    .dropzone-28EMr:hover {
+        background: /*[[bg-9]]*/
+        !important;
+    }
+    .desktop-1AB2K {
+        background: /*[[bg-0]]*/
+    }
+    .nNqlY:not([disabled]) {
+        background: /*[[bg-3]]*/
+        !important;
+    }
+    .footerShadow-VW65p {
         border-color: black;
     }
 }
