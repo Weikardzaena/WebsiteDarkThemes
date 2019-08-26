@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.9
+@version        0.0.10
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -708,6 +708,99 @@
     }
     .ZtnWe {
         color: /*[[ac-p]]*/
+    }
+
+    /* ===================== */
+    /* SECTION: Translations */
+    /* ===================== */
+    #tw-target {
+        background: /*[[bg-03]]*/;
+        border-left: 1px solid black;
+    }
+    .gt-is {
+        background: /*[[bg-01]]*/
+    }
+    .tw-ta {
+        color: /*[[fg-p]]*/;
+    }
+    .vk_c,
+    .vk_cxp,
+    #rhs .fIcnad {
+        border: none;
+        box-shadow: 0 0 5px 0 black;
+    }
+    .hhB0V {
+        color: /*[[ac-p]]*/
+    }
+    .tw-menu-btn {
+        color: /*[[fg-p]]*/
+    }
+    .QXzCSe {
+        color: /*[[fg-p]]*/
+    }
+    .tw-bilingual-pos {
+        color: /*[[fg-p]]*/
+    }
+    .SvKTZc {
+        color: /*[[fg-emph]]*/
+    }
+    .MaH2Hf {
+        color: /*[[fg-p]]*/
+    }
+    .tw-bilingual-marked {
+        background: /*[[focused]]*/;
+    }
+    .tw-menu-btn:not(.tw-menu-btn-disabled):hover {
+        color: /*[[ac-p]]*/
+    }
+    .vCOSGb {
+        border-color: black;
+    }
+    .gLOl5e {
+        border-color: black;
+    }
+    .DFDLnc {
+        border-color: black;
+    }
+
+    /* Language choices popover */
+    .zaokob {
+        background: /*[[bg-04]]*/
+    }
+    .tw-lliw.item-selected .language_list_item {
+        color: /*[[ac-p]]*/
+    }
+    .language_list_item {
+        color: /*[[fg-p]]*/
+    }
+    .tw-lliw:hover,
+    .tw-lliw:focus {
+        background: /*[[focused]]*/;
+        border-color: /*[[focused]]*/;
+    }
+    .tw-lliw:hover .language_list_item,
+    .tw-lliw:focus .language_list_item {
+        color: /*[[fg-emph]]*/
+    }
+    .language_list_languages.tw-ll-top::after {
+        background: linear-gradient(to bottom, transparent, black);
+    }
+    .tw-lp-search {
+        background: /*[[bg-08]]*/;
+        box-shadow: 0 0 3px 0 black;
+        color: /*[[fg-p]]*/
+    }
+
+    /* "Did you mean?..." */
+    .gt-is-itm {
+        background: /*[[bg-04]]*/;
+        box-shadow: 0 1px 2px 0px black;
+    }
+    .gt-is-lb {
+        color: /*[[fg-p]]*/
+    }
+    .gt-is-cont {
+        color: /*[[fg-emph]]*/
     }
 
     /* ==================== */
