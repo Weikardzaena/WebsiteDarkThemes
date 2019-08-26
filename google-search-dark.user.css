@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.10
+@version        0.0.11
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -723,6 +723,10 @@
     .tw-ta {
         color: /*[[fg-p]]*/;
     }
+    #tw-target-rmn.tw-data-text,
+    #tw-source-rmn.tw-data-text {
+        color: /*[[fg-p]]*/
+    }
     .vk_c,
     .vk_cxp,
     #rhs .fIcnad {
@@ -760,6 +764,10 @@
         border-color: black;
     }
     .DFDLnc {
+        border-color: black;
+    }
+    .bHOicb {
+        color: /*[[fg-p]]*/;
         border-color: black;
     }
 
@@ -801,6 +809,9 @@
     }
     .gt-is-cont {
         color: /*[[fg-emph]]*/
+    }
+    .gt-is-sg {
+        color: /*[[fg-p]]*/
     }
 
     /* ==================== */
