@@ -1,96 +1,61 @@
 /* ==UserStyle==
 @name           OneSky
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.1
 @description    A new userstyle
 @author         Me
-@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/master/onesky-dark.user.css
-@advanced color bg-0 "Primary background color" #000000
-@advanced color fg-primary-emph "Primary foreground color for emphasis" #ffffffdf
-@advanced color fg-primary "Primary foreground color" #ffffff9a
-@advanced color fg-disabled "Disabled text primary color" #ffffff61
-@advanced color bg-1 "Level 1 background color" #ffffff0d
-@advanced color bg-2 "Level 2 background color" #ffffff12
-@advanced color bg-3 "Level 3 background color" #ffffff15
-@advanced color bg-4 "Level 4 background color" #ffffff17
-@advanced color bg-5 "Level 5 background color" #ffffff1c
-@advanced color bg-6 "Level 6 background color" #ffffff1f
-@advanced color bg-7 "Level 7 background color" #ffffff24
-@advanced color bg-8 "Level 8 background color" #ffffff27
-@advanced color bg-9 "Level 9 background color" #ffffff29
-@advanced color ac-primary "Primary accent color" #309fab
-@advanced color ac-primary-alt "Alt primary accent color" #418752
-@advanced color ac-secondary "Secondary accent color" #65496e
-@advanced color error "Error color" #a33e3e
-@advanced color dark-text "Dark text" #111111
+@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/develop/onesky-dark.user.css
+@advanced color bg-00 "z=00dp background color" #121212
+@advanced color bg-01 "z=01dp background color" #1d1d1d
+@advanced color bg-02 "z=02dp background color" #222222
+@advanced color bg-03 "z=03dp background color" #242424
+@advanced color bg-04 "z=04dp background color" #272727
+@advanced color bg-06 "z=06dp background color" #2c2c2c
+@advanced color bg-08 "z=08dp background color" #2e2e2e
+@advanced color bg-12 "z=12dp background color" #323232
+@advanced color bg-16 "z=16dp background color" #353535
+@advanced color bg-24 "z=24dp background color" #373737
+@advanced color bg-scrim "Scrimmed bg color" #ffffff4a
+@advanced color focused "Overlay color for focused/hovered elements (24% opacity)" #ffffff3d
+@advanced color fg-p "Primary FG color" #ffffff9a
+@advanced color fg-emph "Primary FG color for emphasis" #ffffffdf
+@advanced color fg-disabled "Primary FG color for emphasis" #ffffff61
+@advanced color fg-on-p "FG color on primary accent" #000000
+@advanced color fg-on-s "FG color on secondary accent" #000000
+@advanced color fg-on-e "FG color on error accent" #ffffff
+@advanced color ac-p "Primary accent color" #8fcdfd
+@advanced color ac-p-hov "Primary accent color when hovering" #e3f3fe
+@advanced color ac-p-alt "Primary alternate accent color" #a3d597
+@advanced color ac-s "Secondary accent color" #d392c6
+@advanced color error "Error bg color" #ba453f
 ==/UserStyle== */
 @-moz-document domain("oneskyapp.com") {
 
+    /* =============== */
     /* SECTION: Global */
-    body,
-    textarea,
-    input[type="text"],
-    input[type="password"],
-    input[type="datetime"],
-    input[type="datetime-local"],
-    input[type="date"],
-    input[type="month"],
-    input[type="time"],
-    input[type="week"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    .uneditable-input,
-    .label,
-    .tag,
-    .kbd-wrap {
-        color: /*[[fg-primary]]*/;
-        background: /*[[bg-0]]*/
+    /* =============== */
+    body {
+        color: /*[[fg-p]]*/;
+        background: /*[[bg-00]]*/
         !important;
     }
 
-    textarea,
-    input[type="text"],
+    input[type="email"],
+    input[type="number"],
     input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="url"],
+    input[type="color"],
+    input[type="date"],
     input[type="datetime"],
     input[type="datetime-local"],
-    input[type="date"],
     input[type="month"],
     input[type="time"],
     input[type="week"],
-    input[type="number"],
-    input[type="email"],
-    input[type="url"],
-    input[type="search"],
-    input[type="tel"],
-    input[type="color"],
-    .uneditable-input,
-    .table-bordered,
-    .modal,
-    .modal-footer,
-    .modal-header,
-    .border-bottom,
-    .border-top,
-    .o-column--left,
-    .kbd-wrap,
-    .badge,
-    .tag,
-    .content-box .content-box-subheader,
-    .table tbody th,
-    .table tbody td,
-    .narrow-header th,
-    .narrow-header th:last-child,
-    .narrow-header th:first-child,
-    .narrow-row td,
-    .narrow-row td:first-child,
-    .narrow-row td:last-child,
-    .panel-modal > .panel-header,
-    .panel-modal > .panel-footer {
-        border-color: /*[[bg-9]]*/
-        !important;
+    textarea {
+        box-shadow: none;
     }
 
     .modal,
@@ -98,44 +63,22 @@
     .badge,
     .dropdown-menu,
     .popover.top.in.fade {
-        background: /*[[bg-0]]*/;
-        border-color: /*[[ac-primary]]*/
+        background: /*[[bg-00]]*/;
+        border-color: /*[[ac-p]]*/
     }
 
     .popover .popover-inner .popover-title {
-        color: /*[[fg-primary-emph]]*/;
-        background: /*[[bg-0]]*/
+        color: /*[[fg-emph]]*/;
+        background: /*[[bg-00]]*/
     }
 
     .popover .popover-inner .popover-content {
-        color: /*[[fg-primary]]*/;
-        background: /*[[bg-0]]*/
+        color: /*[[fg-p]]*/;
+        background: /*[[bg-00]]*/
     }
 
     .badge {
-        color: /*[[ac-primary]]*/
-    }
-
-    .modal-header,
-    .modal-footer,
-    .modal textarea,
-    .modal input[type="text"],
-    .modal input[type="password"],
-    .modal input[type="datetime"],
-    .modal input[type="datetime-local"],
-    .modal input[type="date"],
-    .modal input[type="month"],
-    .modal input[type="time"],
-    .modal input[type="week"],
-    .modal input[type="number"],
-    .modal input[type="email"],
-    .modal input[type="url"],
-    .modal input[type="search"],
-    .modal input[type="tel"],
-    .modal input[type="color"],
-    .modal .uneditable-input {
-        background: /*[[bg-3]]*/
-        !important;
+        color: /*[[ac-p]]*/
     }
 
     h1,
@@ -145,7 +88,7 @@
     h5,
     h6,
     .title-box h1 {
-        color: /*[[fg-primary-emph]]*/
+        color: /*[[fg-emph]]*/
     }
 
     .caret,
@@ -155,16 +98,16 @@
     h4 small,
     h5 small,
     h6 small {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .caret {
-        border-top: 4px solid/*[[fg-primary]]*/;
+        border-top: 4px solid/*[[fg-p]]*/;
     }
 
     * {
         text-shadow: none !important;
-        box-shadow: none !important;
+        border-color: transparent !important;
     }
 
     a,
@@ -174,186 +117,213 @@
     .custom-checklabel .custom-checkbox[type="radio"]:checked + .custom-checkbox-label .custom-checkbox-box,
     .custom-checklabel .custom-checkbox[type="checkbox"]:checked + .custom-checkbox-label .custom-checklabel-text,
     .custom-checklabel .custom-checkbox[type="radio"]:checked + .custom-checkbox-label .custom-checklabel-text {
-        color: /*[[ac-primary]]*/
+        color: /*[[ac-p]]*/
+    }
+
+    /* ======================== */
+    /* SECTION: Site-wide cards */
+    /* ======================== */
+    .box,
+    .panel-card,
+    .list-column-asym > li,
+    .alert,
+    .tab-content-string-meta-container,
+    .popover,
+    .side-actions-container,
+    .admin-form-replace {
+        box-shadow: 0 1px 5px 0 black;
     }
 
     .dropdown-menu input[type="search"],
     .dropdown-menu > li a,
     .dropdown-menu > li button {
-        color: /*[[fg-primary]]*/;
-        background: /*[[bg-3]]*/
+        color: /*[[fg-p]]*/;
+        background: /*[[bg-01]]*/
         !important;
     }
 
     .dropdown-menu > li.active a,
     .dropdown-menu > li.active button {
-        color: /*[[fg-primary-emph]]*/
+        color: /*[[fg-emph]]*/
     }
 
     .dropdown-menu > li a:hover,
     .dropdown-menu > li a:focus,
     .dropdown-menu > li button:hover,
     .dropdown-menu > li button:focus {
-        background: /*[[bg-3]]*/;
-        border-color: /*[[bg-3]]*/
+        background: /*[[bg-01]]*/;
+        border-color: /*[[bg-01]]*/
     }
 
     .black-txt {
-        color: /*[[fg-primary-emph]]*/
+        color: /*[[fg-emph]]*/
         !important;
     }
 
     .u-userLauncherColor:not([disabled]) {
-        background: /*[[ac-primary]]*/
+        background: /*[[ac-p]]*/
         !important;
-        color: /*[[fg-primary-emph]]*/
+        color: /*[[fg-emph]]*/
         !important;
     }
 
     .btn {
-        background: /*[[bg-4]]*/;
-        color: /*[[fg-primary-emph]]*/;
-        border-color: /*[[bg-4]]*/
+        background: /*[[bg-01]]*/;
+        color: /*[[fg-emph]]*/;
+        border-color: /*[[bg-01]]*/;
+        box-shadow: none;
     }
 
     .btn-group.open .btn.dropdown-toggle,
     .btn:hover,
     .btn:focus {
-        background: /*[[bg-9]]*/;
-        color: /*[[fg-primary-emph]]*/
+        background: /*[[bg-01]]*/;
+        color: /*[[fg-emph]]*/
     }
 
     .btn-success {
-        background: /*[[ac-primary-alt]]*/;
-        border-color: /*[[ac-primary-alt]]*/
+        background: /*[[ac-p-alt]]*/;
+        border-color: /*[[ac-p-alt]]*/
     }
 
     .btn.btn-primary,
     .btn-primary.btn-panel {
-        background: /*[[ac-primary]]*/;
-        border-color: /*[[ac-primary]]*/
+        background: /*[[ac-p]]*/;
+        border-color: /*[[ac-p]]*/;
+        box-shadow: 0 1px 4px 0 black;
+        color: /*[[fg-on-p]]*/
     }
 
     .slide-switch {
-        background: /*[[bg-9]]*/;
-        border-color: /*[[bg-9]]*/
+        background: /*[[bg-01]]*/;
+        border-color: /*[[bg-01]]*/
     }
 
     .slide-switch .slide-switch-on {
-        background: /*[[ac-primary-alt]]*/
+        background: /*[[ac-p-alt]]*/
     }
 
     table,
     thead {
-        background: /*[[bg-0]]*/
+        background: /*[[bg-00]]*/
         !important;
     }
 
     .fade {
-        background: /*[[bg-9]]*/
+        background: /*[[bg-scrim]]*/
     }
 
     .alert {
         background: /*[[error]]*/;
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .alert-info {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
     .alert p a {
-        color: /*[[ac-primary]]*/
+        color: /*[[ac-p]]*/
     }
 
+    /* ================ */
     /* SECTION: Sign-in */
+    /* ================ */
     .auth-content,
     .auth-form .hr-block .or-block {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
+    /* ======================== */
     /* SECTION: Left column nav */
+    /* ======================== */
     .o-column--left {
-        background: /*[[bg-1]]*/
+        background: /*[[bg-01]]*/
     }
 
     .c-project-navListItemLink:hover,
     .c-project-navListItemLink:focus {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .c-project-navHeader {
-        color: /*[[fg-primary-emph]]*/;
+        color: /*[[fg-emph]]*/;
     }
 
     .c-project-navListItemLink {
-        color: /*[[fg-primary]]*/;
+        color: /*[[fg-p]]*/;
     }
 
     .c-project-navListItem.is-active .c-project-navListItemLink {
-        color: /*[[ac-primary]]*/
+        color: /*[[ac-p]]*/
     }
 
     .c-project-navListItem.has-icon-button:hover,
     .c-project-navListItem.has-icon-button:focus {
-        background: /*[[bg-9]]*/
+        background: /*[[bg-01]]*/
     }
 
+    /* ===================== */
     /* SECTION: Phrases page */
+    /* ===================== */
     .project-nav-phrase-meta {
-        background: /*[[bg-1]]*/
+        background: /*[[bg-01]]*/
     }
 
+    /* ================== */
     /* SECTION: Dashboard */
+    /* ================== */
     .dashboard-unit {
-        background: /*[[bg-1]]*/
+        background: /*[[bg-01]]*/
     }
 
     ul.feed-content li.feed-item .feed-more {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .dashboard-unit .unit-title .site-stat strong,
     ul.feed-content li.feed-item .feed-body {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .dashboard-unit .feed-notice-content {
-        background: /*[[ac-secondary]]*/
+        background: /*[[ac-s]]*/
     }
 
     .dashboard-unit .feed-notice-content,
     .dashboard-unit .feed-notice-content h3 {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .dashboard-unit,
     .dashboard-unit .unit-title,
     ul.feed-content li.feed-item,
     ol.qa-todo-content li.qa-todo-item {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
+    /* ===================== */
     /* SECTION: All Projects */
+    /* ===================== */
     .content-box .content-box-header .content-box-header-content .input-prepend .add-on {
-        background: /*[[bg-0]]*/
+        background: /*[[bg-00]]*/
     }
 
     .content-box-body,
     .content-box .content-box-header {
-        background: /*[[bg-1]]*/
+        background: /*[[bg-01]]*/
     }
 
     .platform-box {
-        background: /*[[bg-4]]*/
+        background: /*[[bg-01]]*/
     }
 
     .add-platform-box {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .platform-box-content .platform-data-box {
-        background: /*[[bg-4]]*/
+        background: /*[[bg-01]]*/
     }
 
     .platform-box .platform-name a,
@@ -361,7 +331,7 @@
     .platform-box-content .platform-data-box .platform-data-time,
     .platform-box-content .platform-data-box .platform-data .platform-data-title,
     .platform-box-content .platform-data-box .platform-data {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .platform-box,
@@ -369,69 +339,73 @@
     .content-box .content-box-header,
     .platform-box-content .platform-data-box,
     .content-box .content-box-header .content-box-header-content .input-prepend .add-on {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
+    /* ========================= */
     /* SECTION: Project Overview */
+    /* ========================= */
     .table-translation-dashboard > tbody > tr {
-        background: /*[[bg-3]]*/
+        background: /*[[bg-01]]*/
     }
 
     .table-language-dashboard thead th,
     .table-glossary-dashboard thead th,
     .table-language-select thead th {
-        background: /*[[bg-6]]*/
+        background: /*[[bg-01]]*/
     }
 
     .content-box .content-box-subheader,
     .c-headerSub {
-        background: /*[[bg-9]]*/
+        background: /*[[bg-01]]*/
     }
 
     .subtitle-box h2,
     .narrow-row .language-td .language-float-unit h3,
     .c-breadcrumb-item.is-active .c-breadcrumb-link {
-        color: /*[[fg-primary-emph]]*/
+        color: /*[[fg-emph]]*/
     }
 
     .narrow-row .stats-td .dropdown-toggle,
     .narrow-row .approved-td small,
     .narrow-row .translated-td small,
     .narrow-row .resolved-td small {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .breadcrumb li::after {
         color: /*[[fg-disabled]]*/
     }
 
+    /* ========================= */
     /* SECTION: Project Language */
+    /* ========================= */
     .nav-tabs-justified-string-meta {
-        background: /*[[bg-0]]*/
+        background: /*[[bg-00]]*/
     }
 
     .nav-tabs-justified > li.active,
     .nav-tabs-justified-string-meta > li.active a,
     .tab-content-string-meta-container {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .panel-card-list-meta .form-search-phrase-area input {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
         !important;
     }
 
     .panel-card,
     .list-post-item,
     .panel-card.active > .panel-body {
-        background: /*[[bg-3]]*/
+        background: /*[[bg-01]]*/
     }
 
     .label-block,
     .form-side-container-comment,
     .panel-card > .panel-header,
     .panel-card > .panel-body .glossary {
-        background: /*[[bg-3]]*/
+        background: /*[[bg-01]]*/
     }
 
     .sub-header,
@@ -445,19 +419,21 @@
     .panel-card > .panel-body .glossary:hover,
     .list-search-results .list-search-results-item:hover,
     .list-search-results .list-search-results-item:focus {
-        background: /*[[bg-9]]*/
+        background: /*[[bg-01]]*/
     }
 
     .panel-card > .panel-body .glossary,
     .panel-card > .panel-body .glossary:focus,
     .panel-card > .panel-body .glossary:hover {
-        color: /*[[fg-primary-emph]]*/
+        color: /*[[fg-emph]]*/
     }
 
+    /* Phrase notes */
     .box-note {
-        color: /*[[fg-primary]]*/;
-        background: /*[[ac-secondary]]*/;
-        border-color: /*[[ac-secondary]]*/
+        color: /*[[fg-p]]*/;
+        background: /*[[bg-12]]*/;
+        border-color: /*[[bg-12]]*/;
+        box-shadow: 0 1px 3px 0 black;
     }
 
     .list-tag-clickable .title,
@@ -465,76 +441,74 @@
     .list-tag-clickable li > .tag,
     .list-post-item .panel-body,
     .sub-header .main-navigation li.active a {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .select-language .dropdown-toggle {
-        color: /*[[fg-primary-emph]]*/
+        color: /*[[fg-emph]]*/
     }
 
     .list-post.list-post-translation-memory .panel-header .text {
         color: /*[[fg-disabled]]*/
     }
 
-    .list-post-item,
-    .panel-card,
-    .label-block,
-    .sub-header,
-    .tab-content-string-meta-container,
-    .panel-card > .panel-header,
-    .list-post .list-post-item:first-child,
-    .list-post .list-post-item:last-child,
-    .sub-header .main-navigation li,
-    .panel-card > .panel-header .bevel,
-    .panel-card > .panel-header .column:first-child,
-    .panel-card > .panel-header .custom-checkbox-label,
-    .panel-card > .panel-header .bevel-right {
-        border-color: /*[[bg-9]]*/
-    }
-
     .nav-tabs-justified > li.active {
-        border-left-color: /*[[bg-0]]*/;
-        border-right-color: /*[[bg-0]]*/;
+        border-left-color: /*[[bg-00]]*/;
+        border-right-color: /*[[bg-00]]*/;
     }
 
     .custom-checklabel .custom-checkbox-label-icon,
     .nav-tabs-justified-string-meta > li.active a,
     .select-language .dropdown-toggle:hover,
     .select-language .dropdown-toggle:focus {
-        color: /*[[ac-primary]]*/;
+        color: /*[[ac-p]]*/;
     }
 
     .nav-tabs-justified-string-meta > li.active {
-        border-color: /*[[ac-primary]]*/;
+        border-color: /*[[ac-p]]*/;
     }
 
     .main-header {
-        background: /*[[ac-primary]]*/
+        background: /*[[ac-p]]*/
     }
 
     .list-post-item-active .panel-title a {
-        color: /*[[ac-primary-alt]]*/
-    }
-
-    .modal-find-and-replace .form {
-        background: /*[[bg-3]]*/;
-        color: /*[[fg-primary]]*/
+        color: /*[[ac-p-alt]]*/
     }
 
     .list-search-results .list-search-results-item .highlight {
-        background: /*[[ac-primary]]*/;
+        background: /*[[ac-p]]*/;
         color: /*[[dark-text]]*/
     }
 
     .list-search-results .list-search-results-item .highlight.highlight-active {
-        background: /*[[ac-primary-alt]]*/;
+        background: /*[[ac-p-alt]]*/;
         color: /*[[dark-text]]*/
     }
 
+    /* Translated text area */
+    .panel-body .row textarea {
+        background: /*[[bg-12]]*/;
+        border: none;
+        box-shadow: 0 1px 3px 0 black
+    }
+
+    /* Find & Replace Modal */
+    .modal-find-and-replace .form {
+        background: /*[[bg-04]]*/;
+        color: /*[[fg-p]]*/;
+    }
+    .form-find-and-replace-find input {
+        background: /*[[bg-24]]*/;
+        box-shadow: 0 1px 4px 0 black;
+    }
+
+    /* ====================== */
     /* SECTION: Project Tasks */
+    /* ====================== */
     .panel-feature-intro {
-        background: /*[[bg-1]]*/;
-        border-color: /*[[ac-primary]]*/
+        background: /*[[bg-01]]*/;
+        border-color: /*[[ac-p]]*/
     }
 
     .list-post-folder-item,
@@ -542,22 +516,22 @@
     .panel-header-bar,
     .panel-header-filter,
     .panel-header-bar .custom-check .custom-checkbox-label {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
     .empty-state,
     .panel-feature-intro .list-steps p,
     .empty-state .empty-state-message .icon {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .table-dark thead th,
     .table-light thead th {
-        background: /*[[bg-3]]*/
+        background: /*[[bg-01]]*/
     }
 
     .table-light .highlight {
-        background: /*[[bg-5]]*/
+        background: /*[[bg-01]]*/
     }
 
     .table-light tbody tr:hover,
@@ -565,38 +539,40 @@
     .list-post-folder-item:hover,
     .list-post-folder-item:focus,
     .list-post-folder-item.active {
-        background: /*[[bg-9]]*/
+        background: /*[[bg-01]]*/
     }
 
     .table-dark,
     .table-light {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
     .side-actions-container,
     .panel-header-bar,
     .panel-modal > .panel-header,
     .panel-modal > .panel-footer {
-        background: /*[[bg-1]]*/
+        background: /*[[bg-01]]*/
     }
 
+    /* ====================== */
     /* SECTION: Collaboration */
+    /* ====================== */
     .content-container-style-invert {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .block,
     .tabs > li.active > a,
     .table-dark thead tr,
     .table-light thead tr {
-        background: /*[[bg-4]]*/;
+        background: /*[[bg-01]]*/;
     }
 
     .list-topic-title,
     .breadcrumb-block-title,
     .breadcrumb-block-title .breadcrumb-block-title-item {
-        color: /*[[fg-primary-emph]]*/;
-        border-left-color: /*[[ac-primary]]*/
+        color: /*[[fg-emph]]*/;
+        border-left-color: /*[[ac-p]]*/
     }
 
     .list-topic-language,
@@ -607,7 +583,7 @@
     .tabs > li > a,
     .tabs > li > a:hover,
     .tabs > li > a:focus {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .list-topics .list-hover .list-topic:hover,
@@ -616,7 +592,7 @@
     .tabs > li.active > a:focus,
     .tabs > li > a:hover,
     .tabs > li > a:focus {
-        background: /*[[bg-9]]*/
+        background: /*[[bg-01]]*/
     }
 
     .block-item-list .list .active a,
@@ -626,8 +602,8 @@
     .block-item-list .list a:active,
     .list-topic .meta-data-list a,
     .breadcrumb-block-title a.breadcrumb-block-title-item {
-        color: /*[[ac-primary]]*/;
-        border-left-color: /*[[ac-primary]]*/
+        color: /*[[ac-p]]*/;
+        border-left-color: /*[[ac-p]]*/
     }
 
     .tabs,
@@ -644,81 +620,87 @@
     .tabs-option > li > a,
     .tabs-option > li > .btn,
     .tabs > li.active {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
     .table-dark tbody td > a:hover {
-        color: /*[[ac-primary-alt]]*/
+        color: /*[[ac-p-alt]]*/
     }
 
+    /* ================ */
     /* SECTION: Phrases */
+    /* ================ */
     .phrase-manage-list {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .phrase-manage-list,
     .phrase-manage-list-item,
     .project-nav-phrase-meta {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
     .subtitle-box h2 {
-        border-left-color: /*[[ac-primary]]*/
+        border-left-color: /*[[ac-p]]*/
     }
 
     .narrow-row .phrase-td .clickable,
     .project-nav-phrase-meta-list .active a {
-        color: /*[[ac-primary]]*/
+        color: /*[[ac-p]]*/
     }
 
     .project-nav-phrase-meta-list .highlight {
-        color: /*[[ac-primary-alt]]*/
+        color: /*[[ac-p-alt]]*/
     }
 
     .project-nav-phrase-meta-list a {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
+    /* ================= */
     /* SECTION: Glossary */
+    /* ================= */
     .project-nav-navigation,
     .table-language-select td {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .table-language-select .narrow-blocked-row td {
-        background: /*[[ac-secondary]]*/
+        background: /*[[ac-s]]*/
     }
 
     .table-language-select .narrow-language-show-more .show-more {
-        background: /*[[ac-primary]]*/
+        background: /*[[ac-p]]*/
     }
 
     .project-nav-navigation .primary-list .primary-list-item-link {
-        color: /*[[fg-primary]]*/
+        color: /*[[fg-p]]*/
     }
 
     .project-nav-navigation,
     .project-nav-navigation .primary-list .primary-list-item {
-        border-color: /*[[bg-9]]*/
+        border-color: /*[[bg-01]]*/
     }
 
     .project-nav-navigation .primary-list .active {
-        border-bottom-color: /*[[ac-primary]]*/
+        border-bottom-color: /*[[ac-p]]*/
     }
 
     .project-nav-navigation .primary-list .primary-list-item-link:hover,
     .project-nav-navigation .primary-list .primary-list-item-link:focus {
-        color: /*[[fg-primary-emph]]*/;
-        background: /*[[bg-3]]*/
+        color: /*[[fg-emph]]*/;
+        background: /*[[bg-01]]*/
     }
 
+    /* ================= */
     /* SECTION: Settings */
+    /* ================= */
     .content-box-body-content .tab-content {
-        background: /*[[bg-2]]*/
+        background: /*[[bg-01]]*/
     }
 
     .well {
-        background: /*[[bg-4]]*/
+        background: /*[[bg-01]]*/
     }
 
     #pane-glossary.fade {
@@ -726,16 +708,83 @@
     }
 
     .ios {
-        color: /*[[fg-primary]]*/;
-        background: /*[[bg-2]]*/
+        color: /*[[fg-p]]*/;
+        background: /*[[bg-01]]*/
     }
 
     .ios[checked="checked"] {
-        background: /*[[ac-primary-alt]]*/
+        background: /*[[ac-p-alt]]*/
     }
 
     .project-box .project-box-header {
-        background: /*[[ac-primary]]*/;
-        border-color: /*[[ac-primary-alt]]*/
+        background: /*[[ac-p]]*/;
+        border-color: /*[[ac-p-alt]]*/
+    }
+
+    /* ============================== */
+    /* SECTION: Phrase Comments Modal */
+    /* ============================== */
+    .message-thread-modal .project-info,
+    .new-message-modal .project-info,
+    .comment-thread-modal .project-info {
+        background: /*[[bg-01]]*/;
+        border-color: black;
+    }
+
+    .message-thread-modal .project-info .original-phrase,
+    .message-thread-modal .project-info .translated-phrase,
+    .new-message-modal .project-info .original-phrase,
+    .new-message-modal .project-info .translated-phrase,
+    .comment-thread-modal .project-info .original-phrase,
+    .comment-thread-modal .project-info .translated-phrase {
+        background: /*[[bg-01]]*/
+    }
+
+    .message-thread-modal .message-unit,
+    .new-message-modal .message-unit,
+    .comment-thread-modal .message-unit {
+        border-color: black;
+    }
+
+    /* ====================== */
+    /* SECTION: Support Modal */
+    /* ====================== */
+    .text__c-txt__input___2ZeOl {
+        color: /*[[fg-p]]*/;
+        background: /*[[bg-01]]*/
+        !important;
+        border: none;
+    }
+    .text__c-txt__label___11SEJ {
+        color: /*[[fg-p]]*/
+    }
+    .label-uDbS4 {
+        color: /*[[fg-p]]*/
+    }
+    .rf-CheckboxGroup__checkbox:checked + span:before,
+    .u-userTextColor:not([disabled]) {
+        color: /*[[ac-p]]*/
+        !important;
+    }
+    .dropzoneChildLabel-137gB {
+        color: /*[[ac-p]]*/
+    }
+    .Container--dashed-3s9Ji {
+        background: /*[[bg-01]]*/;
+        border-color: /*[[fg-disabled]]*/
+    }
+    .dropzone-28EMr:hover {
+        background: /*[[bg-01]]*/
+        !important;
+    }
+    .desktop-1AB2K {
+        background: /*[[bg-00]]*/
+    }
+    .nNqlY:not([disabled]) {
+        background: /*[[bg-01]]*/
+        !important;
+    }
+    .footerShadow-VW65p {
+        border-color: black;
     }
 }
