@@ -1,42 +1,68 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.11
+@version        0.0.12
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
-@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/develop/google-search-dark.user.css
-@advanced color bg-00 "z=00dp background color" #121212
-@advanced color bg-01 "z=01dp background color" #1d1d1d
-@advanced color bg-02 "z=02dp background color" #222222
-@advanced color bg-03 "z=03dp background color" #242424
-@advanced color bg-04 "z=04dp background color" #272727
-@advanced color bg-06 "z=06dp background color" #2c2c2c
-@advanced color bg-08 "z=08dp background color" #2e2e2e
-@advanced color bg-12 "z=12dp background color" #323232
-@advanced color bg-16 "z=16dp background color" #353535
-@advanced color bg-24 "z=24dp background color" #373737
-@advanced color focused "Overlay color for focused/hovered elements (24% opacity)" #ffffff3d
-@advanced color fg-p "Primary FG color" #ffffff9a
-@advanced color fg-emph "Primary FG color for emphasis" #ffffffdf
-@advanced color fg-disabled "Primary FG color for emphasis" #ffffff61
-@advanced color fg-on-p "FG color on primary accent" #000000
-@advanced color fg-on-s "FG color on secondary accent" #000000
-@advanced color fg-on-e "FG color on error accent" #ffffff
-@advanced color ac-p "Primary accent color" #8fcdfd
-@advanced color ac-p-hov "Primary accent color when hovering" #e3f3fe
-@advanced color ac-p-alt "Primary alternate accent color" #a3d597
-@advanced color ac-s "Secondary accent color" #d392c6
-@advanced color error "Error bg color" #ba453f
+@updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/material-elevation/google-search-dark.user.css
+@preprocessor   stylus
 ==/UserStyle== */
-@-moz-document regexp("^https:\\/\\/www\\.google\\.com(?!\\/maps)(?!\\/flights)((?!tbm=).)*$") {
+
+bg-00 = #121212
+bg-01 = #1d1d1d
+bg-02 = #222222
+bg-03 = #242424
+bg-04 = #272727
+bg-06 = #2c2c2c
+bg-08 = #2e2e2e
+bg-12 = #323232
+bg-16 = #353535
+bg-24 = #373737
+focused = #ffffff3d
+fg-p = #ffffff9a
+fg-emph = #ffffffdf
+fg-disabled = #ffffff61
+fg-on-p = #000000
+fg-on-s = #000000
+fg-on-e = #ffffff
+ac-p = #8fcdfd
+ac-p-hov = #e3f3fe
+ac-p-alt = #a3d597
+ac-s = #d392c6
+error = #ba453f
+
+/* How high off the 0dp level the light source is */
+light-elev = unit(60, px)
+/* dp offset of the light source relative to the bottom-aligned edge of the visual element */
+light-offset = unit(5, px)
+/* How wide the light source is */
+light-width = unit(80, px)
+
+elevation(dp)
+    dp = unit(dp, px)
+    if dp <= 0 or dp >= light-elev
+        box-shadow none
+    else
+        /* This math comes from leveraging similar triangles with a flat light source and a flat visual element */
+        bottom-offset = (light-offset / ((light-elev / dp) - 1))
+        /* numerator and denom come from similar triangles */
+        numerator = (light-width ** 2) * (dp ** 2 + bottom-offset ** 2)
+        denom = light-width ** 2 + (light-elev - dp) ** 2
+        result = (numerator / denom)
+        /* a^2 + b^2 = c^2, so we take the sqrt here. */
+        radius = math(result, "sqrt")
+        offset-tot = bottom-offset + (radius / 2)
+        box-shadow 0 offset-tot radius 0 black, 0 0 max((radius / 2), unit(2, px)) 0 black
+
+@-moz-document regexp("^https:\\/\\/www\\.google\\.com(?!\\/maps)(?!\\/flights)((?!tbm=).)*$")
+    
     /* =============== */
     /* SECTION: Global */
     /* =============== */
-    body {
-        background: /*[[bg-00]]*/;
-        color: /*[[fg-p]]*/
-    }
+    body
+        background bg-00
+        color fg-p
 
     /* Links */
     a:link,
@@ -46,13 +72,13 @@
     .q:active,
     .q:visited,
     .kl:active,
-    .tbotu {
-        color: /*[[ac-p]]*/
-    }
+    .tbotu
+        color ac-p
+    
     .mblink:visited,
-    a:visited {
-        color: /*[[ac-s]]*/
-    }
+    a:visited
+        color ac-s
+    
     .a,
     cite,
     cite a:link,
@@ -60,30 +86,30 @@
     .cite,
     .cite:link,
     #nygTcd > i,
-    .bc a:link {
-        color: /*[[ac-p-alt]]*/
-    }
+    .bc a:link
+        color ac-p-alt
+    
 
-    input {
-        background: /*[[bg-00]]*/;
-        color: /*[[fg-p]]*/
-    }
+    input
+        background bg-00
+        color fg-p
+    
 
     /* Expando arrow */
     .GHDvEf,
     .GHDvEf:hover,
     .GHDvEf.selected,
-    .GHDvEf.selected:hover {
-        background: transparent;
-    }
-    .action-menu .mn-dwn-arw {
-        border-color: transparent;
-        border-top-color: /*[[ac-p-alt]]*/
-    }
-    .action-menu:hover .mn-dwn-arw {
-        border-color: transparent;
-        border-top-color: /*[[ac-p]]*/
-    }
+    .GHDvEf.selected:hover
+        background transparent
+    
+    .action-menu .mn-dwn-arw
+        border-color transparent
+        border-top-color ac-p-alt
+    
+    .action-menu:hover .mn-dwn-arw
+        border-color transparent
+        border-top-color ac-p
+    
 
     /* ================================ */
     /* SECTION: www.google.com homepage */
@@ -91,752 +117,635 @@
     /* Links at top of page */
     #gb#gb a.gb_d,
     #gb#gb a.gb_e,
-    #gb#gb span.gb_e {
-        color: /*[[fg-p]]*/
-    }
-    #hptl a {
-        color: /*[[fg-p]]*/
-    }
+    #gb#gb span.gb_e
+        color fg-p
+    
+    #hptl a
+        color fg-p
+    
 
     /* Search buttons */
     .jhp input[type="submit"],
     .sbdd_a input,
-    .gbqfba {
-        background: /*[[bg-12]]*/;
-        border: none;
-        box-shadow: 0 0 5px 1px black;
-        color: /*[[fg-p]]*/
-    }
+    .gbqfba
+        background bg-08
+        border: none
+        elevation(8)
+        color fg-p
+    
     .jhp input[type="submit"]:hover,
     .sbdd_a input:hover,
-    .gbqfba:hover {
-        background: /*[[focused]]*/;
-        color: /*[[fg-emph]]*/;
-        border: none;
-    }
-    .jhp input[type="submit"],
-    .sbdd_a input,
-    .gbqfba {
-        background: /*[[bg-24]]*/
-    }
-
+    .gbqfba:hover
+        background focused
+        color fg-emph
+        border: none
+    
     /* Footer */
     .ftl,
-    #footer a {
-        color: /*[[fg-disabled]]*/
-    }
+    #footer a
+        color fg-disabled
+    
 
     /* =================== */
     /* SECTION: Search bar */
     /* =================== */
-    .RNNXgb {
-        background: /*[[bg-16]]*/;
-        border: none;
-        box-shadow: 0 0 5px 1px black
-    }
+    .RNNXgb
+        background bg-06
+        border none
+        elevation(1)
+    
     .RNNXgb:hover,
-    .sbfc .RNNXgb {
-        background: /*[[focused]]*/;
-        box-shadow: 0 0 5px 1px black;
-    }
-    .rINcab {
-        color: /*[[ac-p]]*/
-    }
-    .aajZCb {
-        background: /*[[bg-16]]*/;
-        box-shadow: 0px 4px 5px 1px black;
-    }
-    .emcav .RNNXgb {
-        box-shadow: 0px 1px 5px 1px black;
-    }
-    .gLFyf {
-        color: /*[[fg-p]]*/
-    }
+    .sbfc .RNNXgb
+        background bg-12
+        elevation(4)
+    
+    .rINcab
+        color ac-p
+    
+    .aajZCb
+        background bg-16
+        elevation(16)
+    
+    .emcav .RNNXgb
+        box-shadow: 0px 1px 6px 0px black
+    
+    .gLFyf
+        color fg-p
+    
     .RNNXgb:hover .gLFyf,
-    .gLFyf:focus {
-        color: /*[[fg-emph]]*/;
-    }
-    .sbl1 {
-        color: /*[[fg-p]]*/;
-    }
-    .sbhl {
-        background: /*[[focused]]*/;
-    }
-    .sbhl .sbl1 {
-        color: /*[[fg-emph]]*/
-    }
-    .xtSCL {
-        border-top-color: black
-    }
+    .gLFyf:focus
+        color fg-emph
+    
+    .sbl1
+        color fg-p
+    
+    .sbhl
+        background focused
+    
+    .sbhl .sbl1
+        color fg-emph
+    
+    .xtSCL
+        border-top-color black
+    
 
     /* ======================= */
     /* SECTION: Results header */
     /* ======================= */
-    #appbar {
-        background: /*[[bg-00]]*/
-    }
+    #appbar
+        background bg-00
+    
 
     /* "All," "Maps," "News," etc. header */
-    #hdtbSum {
-        background: /*[[bg-04]]*/
-    }
-    #hdtb {
-        border-bottom-color: black;
+    #hdtbSum
+        background bg-04
+    
+    #hdtb
+        border-bottom-color black
         box-shadow: 0px 0px 4px black
-    }
-    #hdtb .hdtb-mitem a {
-        color: /*[[fg-p]]*/
-    }
-    #hdtb-msb .hdtb-mitem.hdtb-msel {
-        color: /*[[ac-p]]*/;
-        border-bottom-color: /*[[ac-p]]*/
-    }
+    
+    #hdtb .hdtb-mitem a
+        color fg-p
+    
+    #hdtb-msb .hdtb-mitem.hdtb-msel
+        color ac-p
+        border-bottom-color ac-p
+    
     .hdtbItm label:hover,
     .hdtbItm a:hover,
     #hdtb-more-mn a:hover,
     #hdtb .hdtb-mitem a:hover,
     .hdtb-mn-hd:hover,
     #hdtb-more:hover,
-    #hdtb-tls:hover {
-        color: /*[[ac-p]]*/
-    }
+    #hdtb-tls:hover
+        color ac-p
+    
     #hdtb-msb #hdtb-more,
-    #hdtb-msb #hdtb-tls {
-        color: /*[[fg-p]]*/
-    }
-    #hdtb-tls:hover {
-        background: /*[[focused]]*/;
-        border: none;
-    }
+    #hdtb-msb #hdtb-tls
+        color fg-p
+    
+    #hdtb-tls:hover
+        background focused
+        border: none
+    
     #hdtb-msb .hdtb-tl-sel,
-    #hdtb-msb .hdtb-tl-sel:hover {
-        background: /*[[ac-p]]*/;
-        color: /*[[fg-on-p]]*/;
-        border: none;
-    }
-    #hdtb-msb #hdtb-tls.hdtb-tl-sel {
-        color: /*[[fg-on-p]]*/
-    }
+    #hdtb-msb .hdtb-tl-sel:hover
+        background ac-p
+        color fg-on-p
+        border: none
+    
+    #hdtb-msb #hdtb-tls.hdtb-tl-sel
+        color fg-on-p
+    
 
     /* "More" dropdown */
-    .cF4V5c {
-        background: /*[[bg-24]]*/;
+    .cF4V5c
+        background bg-24
         box-shadow: 0px 0px 6px 1px black
-    }
-    .il8Sef a.f9UGee {
-        color: /*[[fg-p]]*/
-    }
-    .f9UGee.AchQod {
-        background: /*[[focused]]*/
-    }
-    .il8Sef a.f9UGee.AchQod {
-        color: /*[[fg-emph]]*/
-    }
+    
+    .il8Sef a.f9UGee
+        color fg-p
+    
+    .f9UGee.AchQod
+        background focused
+    
+    .il8Sef a.f9UGee.AchQod
+        color fg-emph
+    
 
     /* Very top of the search results page, behind the Google logo */
-    .sfbg.nojsv {
-        background: /*[[bg-04]]*/
-    }
+    .sfbg.nojsv
+        background bg-04
+    
 
-    .jsrp.mdm.minidiv {
-        box-shadow: 0px 10px 4px black;
-    }
+    .minidiv .sfbg
+        box-shadow: 0 0 5px 0 black
+    
 
     /* ===================== */
     /* SECTION: Main results */
     /* ===================== */
     /* Result stats at top of page */
-    #resultStats {
-        color: /*[[fg-disabled]]*/
-    }
+    #resultStats
+        color fg-disabled
+    
 
     /* Tools dropdowns */
-    .hdtb-mn-hd {
-        color: /*[[fg-p]]*/
-    }
+    .hdtb-mn-hd
+        color fg-p
+    
     .hdtb-mn-hd:hover .mn-dwn-arw,
-    #hdtb-more:hover .mn-dwn-arw {
-        border-top-color: /*[[ac-p]]*/
-    }
+    #hdtb-more:hover .mn-dwn-arw
+        border-top-color ac-p
+    
     .hdtb-mn-o,
-    .hdtb-mn-c {
-        background: /*[[bg-24]]*/;
-    }
-    .hdtbItm {
-        background: /*[[bg-24]]*/;
-    }
+    .hdtb-mn-c
+        background bg-24
+    
+    .hdtbItm
+        background bg-24
+    
     .hdtbItm.hdtbSel,
     #hdtb .hdtbItm a,
     #hdtb-more-mn a,
-    #cdrlnk {
-        color: /*[[fg-p]]*/
-    }
+    #cdrlnk
+        color fg-p
+    
     #hdtb-more-mn a:hover,
     .hdtbItm.hdtbSel:hover,
     .hdtbItm a:hover,
-    #cdrlnk:hover {
-        background: /*[[bg-04]]*/;
-        color: /*[[fg-emph]]*/
-    }
-    .hdtbItm.hdtbSel {
-        background: /*[[bg-04]]*/;
-        color: /*[[fg-emph]]*/
-    }
-    #cdr_opt {
-        background: /*[[bg-24]]*/
-    }
-    .cdr_sep {
-        border-color: black
-    }
+    #cdrlnk:hover
+        background bg-04
+        color fg-emph
+    
+    .hdtbItm.hdtbSel
+        background bg-04
+        color fg-emph
+    
+    #cdr_opt
+        background bg-24
+    
+    .cdr_sep
+        border-color black
+    
 
     /* "More" FABs */
-    g-fab {
-        background: /*[[ac-s]]*/
-        !important;
-        color: /*[[fg-on-s]]*/
-        !important;
-        box-shadow: 0 0 5px 3px black !important;
-    }
-    .CNf3nf {
-        border-color: transparent !important;
-    }
-    .Lu0opc {
-        opacity: 1 !important;
-    }
-    g-fab .z1asCe {
-        fill: /*[[fg-on-p]]*/
-    }
+    g-fab
+        background ac-s !important
+        color fg-on-s !important
+        box-shadow: 0 0 5px 3px black !important
+    
+    .CNf3nf
+        border-color transparent !important
+    
+    .Lu0opc
+        opacity: 1 !important
+    
+    g-fab .z1asCe
+        fill: fg-on-p
+    
 
     /* Main result cards */
-    .kp-blk {
-        background: /*[[bg-01]]*/;
-        border: none;
-        box-shadow: 0px 0px 5px black;
-    }
+    .kp-blk
+        background bg-01
+        border: none
+        box-shadow: 0px 0px 5px black
+    
 
     /* Search result summary */
-    .s {
-        color: /*[[fg-p]]*/
-    }
+    .s
+        color fg-p
+    
     .s .st em,
-    .st.s.std em {
-        color: /*[[fg-p]]*/
-    }
+    .st.s.std em
+        color fg-p
+    
 
     /* Trending story cards */
-    g-inner-card {
-        background: /*[[bg-01]]*/
-    }
-    .cv2VAd {
-        border: none;
-        box-shadow: 0px 0px 5px black;
-    }
-    .wUrVib {
-        color: /*[[ac-p]]*/
-    }
-    .EZRelc {
-        fill: /*[[ac-p]]*/;
-        color: /*[[ac-p]]*/
-    }
+    g-inner-card
+        background bg-01
+    
+    .cv2VAd
+        border: none
+        box-shadow: 0px 0px 5px black
+    
+    .wUrVib
+        color ac-p
+    
+    .EZRelc
+        fill: ac-p
+        color ac-p
+    
 
     /* Maps cards */
     .vk_c,
-    .vk_cxp {
-        background: /*[[bg-01]]*/
-    }
-    .ccBEnf {
-        border-color: black
-    }
+    .vk_cxp
+        background bg-01
+    
+    .ccBEnf
+        border-color black
+    
     .vk_c,
     .vk_cxp,
-    #rhs .fIcnad {
-        border-color: black
-    }
-    .wYWDAd {
-        border-color: black
-    }
-    div.AEprdc.vk_c {
+    #rhs .fIcnad
+        border-color black
+    
+    .wYWDAd
+        border-color black
+    
+    div.AEprdc.vk_c
         box-shadow: 0px 0px 5px black
-    }
-    .yyjhs {
-        background: /*[[bg-08]]*/
-    }
-    .dbg0pd {
-        color: /*[[fg-emph]]*/
-    }
-    .uMdZh {
-        color: /*[[fg-p]]*/
-    }
-    .uMdZh:hover {
-        background: /*[[focused]]*/
-    }
-    .rllt__wrapped > span {
-        color: /*[[error]]*/
-        !important;
-    }
-    .F7IIOc {
-        color: /*[[fg-p]]*/
-    }
+    
+    .yyjhs
+        background bg-08
+    
+    .dbg0pd
+        color fg-emph
+    
+    .uMdZh
+        color fg-p
+    
+    .uMdZh:hover
+        background focused
+    
+    .rllt__wrapped > span
+        color error !important
+    
+    .F7IIOc
+        color fg-p
+    
     .F7IIOc.rlf__open:not(.rlf__applied),
-    .F7IIOc:not(.rlf__applied):hover {
-        color: /*[[fg-emph]]*/
-    }
-    .FZaw6b {
-        border-top-color: /*[[fg-p]]*/;
-        border-bottom-color: /*[[fg-p]]*/;
-    }
+    .F7IIOc:not(.rlf__applied):hover
+        color fg-emph
+    
+    .FZaw6b
+        border-top-color fg-p
+        border-bottom-color fg-p
+    
     .F7IIOc.rlf__open:not(.rlf__applied) .FZaw6b,
-    .F7IIOc:not(.rlf__applied):hover .FZaw6b {
-        border-top-color: /*[[fg-p]]*/;
-        border-bottom-color: /*[[fg-p]]*/;
-    }
-    .tGgE5d {
-        border-color: black;
-    }
+    .F7IIOc:not(.rlf__applied):hover .FZaw6b
+        border-top-color fg-p
+        border-bottom-color fg-p
+    
+    .tGgE5d
+        border-color black
+    
 
     /* After clicking a link, the surrounding "people also search for" tile */
-    .exp-outline {
-        background: /*[[bg-01]]*/;
-        border: none;
-        box-shadow: 0px 0px 5px black;
-    }
-    .eJ7tvc {
-        color: /*[[fg-p]]*/
-    }
-    .XCKyNd {
-        background-color: /*[[error]]*/;
-        padding: 8px;
-        margin: 2px;
-        opacity: 1;
-    }
+    .exp-outline
+        background bg-01
+        border: none
+        box-shadow: 0px 0px 5px black
+    
+    .eJ7tvc
+        color fg-p
+    
+    .XCKyNd
+        background-color error
+        padding: 8px
+        margin: 2px
+        opacity: 1
+    
 
     /* Dictionary tile */
-    .vk_gy {
-        color: /*[[fg-disabled]]*/
-        !important;
-    }
-    .vk_bk {
-        color: /*[[fg-p]]*/
-        !important;
-    }
-    .iXqz2e .exp-txt-c {
-        color: /*[[fg-p]]*/
-    }
-    .lr_dct_lbl_box {
-        background: /*[[ac-s]]*/;
-        color: /*[[fg-on-s]]*/
-    }
-    .gJBeNe {
-        color: /*[[fg-emph]]*/
-    }
-    .ElpxJd {
-        background: /*[[bg-12]]*/;
-        color: /*[[fg-p]]*/;
-        border: none;
-        box-shadow: 0 1px 2px black;
-    }
-    .lr_dct_trns_sel:hover {
-        background: /*[[focused]]*/;
-        border: none;
-        box-shadow: 0 1px 2px black;
-    }
-    .ElpxJd > option {
-        background: /*[[bg-08]]*/
-    }
-    .pVFdhc {
-        background: black
-    }
-    .dw-sb-cont {
-        background: /*[[bg-00]]*/
-    }
-    .dw-sb-cont .dw-sbi {
-        color: /*[[fg-p]]*/;
-        border-color: transparent
-    }
-    .dw-sb-cont .dw-sb-btn {
-        background: /*[[ac-p]]*/;
+    .vk_gy
+        color fg-disabled !important
+    
+    .vk_bk
+        color fg-p !important
+    
+    .iXqz2e .exp-txt-c
+        color fg-p
+    
+    .lr_dct_lbl_box
+        background ac-s
+        color fg-on-s
+    
+    .gJBeNe
+        color fg-emph
+    
+    .ElpxJd
+        background bg-12
+        color fg-p
         border: none
-    }
-    #dictionary-modules .z1asCe {
-        fill: /*[[fg-on-p]]*/
-    }
+        box-shadow: 0 1px 2px black
+    
+    .lr_dct_trns_sel:hover
+        background focused
+        border: none
+        box-shadow: 0 1px 2px black
+    
+    .ElpxJd > option
+        background bg-08
+    
+    .pVFdhc
+        background black
+    
+    .dw-sb-cont
+        background bg-00
+    
+    .dw-sb-cont .dw-sbi
+        color fg-p
+        border-color transparent
+    
+    .dw-sb-cont .dw-sb-btn
+        background ac-p
+        border: none
+    
+    #dictionary-modules .z1asCe
+        fill: fg-on-p
+    
     .vk_ard,
-    .vk_aru {
-        background: black
-    }
-    .vk_arc {
-        border-color: black
-    }
-    .vk_ard:before {
-        border-top-color: black
-    }
-    .vk_ard:after {
-        border-top-color: /*[[ac-s]]*/
-    }
-    .vk_aru:before {
-        border-bottom-color: black
-    }
-    .vk_aru:after {
-        border-bottom-color: /*[[ac-s]]*/
-    }
+    .vk_aru
+        background black
+    
+    .vk_arc
+        border-color black
+    
+    .vk_ard:before
+        border-top-color black
+    
+    .vk_ard:after
+        border-top-color ac-s
+    
+    .vk_aru:before
+        border-bottom-color black
+    
+    .vk_aru:after
+        border-bottom-color ac-s
+    
 
     /* Central food info tile */
-    .Z0LcW {
-        color: /*[[fg-p]]*/
-    }
-    .N6Sb2c {
-        color: /*[[fg-p]]*/
-    }
-    .i29hTd .qLLird {
-        color: /*[[fg-emph]]*/
-    }
-    .i29hTd .kR7nSc {
-        color: /*[[fg-emph]]*/
-    }
-    .shDvCe {
-        color: /*[[fg-disabled]]*/
-    }
-    .k6J3K {
-        border: none;
+    .Z0LcW
+        color fg-p
+    
+    .N6Sb2c
+        color fg-p
+    
+    .i29hTd .qLLird
+        color fg-emph
+    
+    .i29hTd .kR7nSc
+        color fg-emph
+    
+    .shDvCe
+        color fg-disabled
+    
+    .k6J3K
+        border: none
         box-shadow: 0 0 3px 1px black
-    }
+    
     .Cc3NMb,
-    .ZIxWWd {
-        background: /*[[bg-08]]*/;
-        color: /*[[fg-p]]*/;
-    }
-    .E6Cqjb {
-        background: black
-    }
-    .kno-ftr {
-        color: /*[[fg-p]]*/
-    }
+    .ZIxWWd
+        background bg-08
+        color fg-p
+    
+    .E6Cqjb
+        background black
+    
+    .kno-ftr
+        color fg-p
+    
 
     /* Right food info tile */
-    .Ss2Faf {
-        color: /*[[fg-p]]*/
-    }
-    .wwUB2c {
-        color: /*[[fg-disabled]]*/
-    }
-    .AYBNrd {
-        background: /*[[bg-01]]*/;
-        border-color: black
-    }
-    .HIf9ae {
-        background: /*[[bg-01]]*/
-    }
-    .AYBNrd td {
-        border-color: black
-    }
+    .Ss2Faf
+        color fg-p
+    
+    .wwUB2c
+        color fg-disabled
+    
+    .AYBNrd
+        background bg-01
+        border-color black
+    
+    .HIf9ae
+        background bg-01
+    
+    .AYBNrd td
+        border-color black
+    
 
     /* Map card dropdowns */
-    .czHJJ {
-        background: /*[[bg-24]]*/;
-        border: none;
+    .czHJJ
+        background bg-24
+        border: none
         box-shadow: 0 0 5px black
-    }
-    .w3RMhb .zFsEvf {
-        color: /*[[fg-p]]*/
-    }
-    .w3RMhb:hover .zFsEvf {
-        color: /*[[fg-emph]]*/
-    }
-    .w3RMhb:hover {
-        background: /*[[focused]]*/;
-        color: /*[[fg-emph]]*/
-    }
-    .w3RMhb.expanded {
-        background: /*[[ac-s]]*/;
-        color: /*[[fg-on-s]]*/
-    }
+    
+    .w3RMhb .zFsEvf
+        color fg-p
+    
+    .w3RMhb:hover .zFsEvf
+        color fg-emph
+    
+    .w3RMhb:hover
+        background focused
+        color fg-emph
+    
+    .w3RMhb.expanded
+        background ac-s
+        color fg-on-s
+    
 
     /* Right-side cards */
-    .kno-ecr-pt {
-        color: /*[[fg-emph]]*/
-    }
+    .kno-ecr-pt
+        color fg-emph
+    
     a.fl:link,
     .fl a,
     .flt,
     a.flt,
     .gl a:link,
     a.mblink,
-    .mblink b {
-        color: /*[[ac-p]]*/
-    }
-    .xXEKkb {
-        color: /*[[ac-p]]*/
-        !important;
-    }
-    .cwUqwd {
-        color: /*[[fg-p]]*/
-    }
-    .y8Jpof:hover {
-        background-color: /*[[focused]]*/
-    }
+    .mblink b
+        color ac-p
+    
+    .xXEKkb
+        color ac-p !important
+    
+    .cwUqwd
+        color fg-p
+    
+    .y8Jpof:hover
+        background-color focused
+    
     .kp-blk .xpdclose .farUxc,
-    .kp-blk .xpdopen .mJ2Mod {
-        border-color: black
-    }
+    .kp-blk .xpdopen .mJ2Mod
+        border-color black
+    
 
     /* All card titles */
     .JolIg,
-    .garHBe {
-        color: /*[[fg-emph]]*/
-    }
+    .garHBe
+        color fg-emph
+    
 
     /* Link/share icon */
-    .rsir2d {
-        color: /*[[fg-p]]*/
-    }
+    .rsir2d
+        color fg-p
+    
 
     /* "People also search for..." */
-    .cbphWd {
-        border-color: black
-    }
-    .vp45yf {
-        color: /*[[fg-p]]*/
-    }
+    .cbphWd
+        border-color black
+    
+    .vp45yf
+        color fg-p
+    
 
     /* Related searches */
-    #brs .med {
-        color: /*[[fg-p]]*/
-    }
-    .oaSpFd {
-        color: /*[[fg-p]]*/
-    }
+    #brs .med
+        color fg-p
+    
+    .oaSpFd
+        color fg-p
+    
 
     /* Searches footer */
-    #foot #navcnt a {
-        color: /*[[ac-p]]*/
-    }
-    #foot #navcnt .cur {
-        color: /*[[ac-s]]*/
-    }
+    #foot #navcnt a
+        color ac-p
+    
+    #foot #navcnt .cur
+        color ac-s
+    
 
     /* Videos suggestions */
-    .cJzOGc {
-        color: /*[[ac-p-alt]]*/
-    }
-    .zECGdd {
-        color: /*[[fg-disabled]]*/
-    }
+    .cJzOGc
+        color ac-p-alt
+    
+    .zECGdd
+        color fg-disabled
+    
 
     /* Picture suggestions */
-    #irl_r_a:hover {
-        color: /*[[ac-s]]*/
-    }
+    #irl_r_a:hover
+        color ac-s
+    
 
     /* =================== */
     /* SECTION: Calculator */
     /* =================== */
-    .fB3vD {
-        color: /*[[fg-p]]*/
-    }
-    .XH1CIc {
-        color: /*[[fg-disabled]]*/
-    }
-    .TIGsTb {
-        border-color: black;
-        background: /*[[bg-01]]*/
-    }
+    .fB3vD
+        color fg-p
+    
+    .XH1CIc
+        color fg-disabled
+    
+    .TIGsTb
+        border-color black
+        background bg-01
+    
     .lqyc1.d0jRmd,
-    .d0jRmd {
-        border-color: /*[[ac-p]]*/
-    }
-    .wVudU {
-        background: /*[[bg-01]]*/
-    }
+    .d0jRmd
+        border-color ac-p
+    
+    .wVudU
+        background bg-01
+    
     .AOvabd,
-    .dxp44d {
-        background: /*[[bg-12]]*/;
-        border-color: transparent;
-        color: /*[[fg-p]]*/;
+    .dxp44d
+        background bg-12
+        border-color transparent
+        color fg-p
         box-shadow: 0 0 4px 1px black
-    }
+    
     .AOvabd:hover,
-    .dxp44d:hover {
-        background: /*[[focused]]*/
-    }
+    .dxp44d:hover
+        background focused
+    
     .AOvabd:focus:hover,
-    .dxp44d:focus:hover {
-        background: /*[[focused]]*/;
-        border-color: /*[[ac-s]]*/;
-    }
-    .UUhRt {
-        background: /*[[ac-p]]*/;
-        color: /*[[fg-on-p]]*/;
-        border-color: transparent;
+    .dxp44d:focus:hover
+        background focused
+        border-color ac-s
+    
+    .UUhRt
+        background ac-p
+        color fg-on-p
+        border-color transparent
         box-shadow: 0 0 4px 1px black
-    }
-    .UUhRt:hover {
-        background: /*[[ac-p-alt]]*/
-    }
-    .UUhRt:focus:hover {
-        background: /*[[ac-p-alt]]*/;
-        border-color: /*[[ac-s]]*/;
-    }
+    
+    .UUhRt:hover
+        background ac-p-alt
+    
+    .UUhRt:focus:hover
+        background ac-p-alt
+        border-color ac-s
+    
     .MEdqYd,
-    .feqqG {
-        background: /*[[bg-16]]*/;
-        border-color: transparent;
-        color: /*[[fg-p]]*/;
-        box-shadow: 0 0 5px 1px black;
-    }
+    .feqqG
+        background bg-16
+        border-color transparent
+        color fg-p
+        box-shadow: 0 0 5px 1px black
+    
     .MEdqYd:hover,
-    .feqqG:hover {
-        background: /*[[focused]]*/
-    }
+    .feqqG:hover
+        background focused
+    
     .MEdqYd:focus:hover,
-    .feqqG:focus:hover {
-        background: /*[[focused]]*/;
-        border-color: /*[[ac-s]]*/;
-    }
+    .feqqG:focus:hover
+        background focused
+        border-color ac-s
+    
     .pno7A.hU1rMc .Tqvz7b,
-    .pno7A.rfUaPd .SwDSDf {
-        color: /*[[ac-p]]*/
-    }
+    .pno7A.rfUaPd .SwDSDf
+        color ac-p
+    
     .pno7A.rfUaPd .Tqvz7b,
-    .pno7A.hU1rMc .SwDSDf {
-        color: /*[[fg-disabled]]*/
-    }
-    .Lm2Tt {
-        border-color: black
-    }
-    .XDTKBd {
-        color: /*[[fg-disabled]]*/
-    }
-    .ZtnWe {
-        color: /*[[ac-p]]*/
-    }
-
-    /* ===================== */
-    /* SECTION: Translations */
-    /* ===================== */
-    #tw-target {
-        background: /*[[bg-03]]*/;
-        border-left: 1px solid black;
-    }
-    .gt-is {
-        background: /*[[bg-01]]*/
-    }
-    .tw-ta {
-        color: /*[[fg-p]]*/;
-    }
-    #tw-target-rmn.tw-data-text,
-    #tw-source-rmn.tw-data-text {
-        color: /*[[fg-p]]*/
-    }
-    .vk_c,
-    .vk_cxp,
-    #rhs .fIcnad {
-        border: none;
-        box-shadow: 0 0 5px 0 black;
-    }
-    .hhB0V {
-        color: /*[[ac-p]]*/
-    }
-    .tw-menu-btn {
-        color: /*[[fg-p]]*/
-    }
-    .QXzCSe {
-        color: /*[[fg-p]]*/
-    }
-    .tw-bilingual-pos {
-        color: /*[[fg-p]]*/
-    }
-    .SvKTZc {
-        color: /*[[fg-emph]]*/
-    }
-    .MaH2Hf {
-        color: /*[[fg-p]]*/
-    }
-    .tw-bilingual-marked {
-        background: /*[[focused]]*/;
-    }
-    .tw-menu-btn:not(.tw-menu-btn-disabled):hover {
-        color: /*[[ac-p]]*/
-    }
-    .vCOSGb {
-        border-color: black;
-    }
-    .gLOl5e {
-        border-color: black;
-    }
-    .DFDLnc {
-        border-color: black;
-    }
-    .bHOicb {
-        color: /*[[fg-p]]*/;
-        border-color: black;
-    }
-
-    /* Language choices popover */
-    .zaokob {
-        background: /*[[bg-04]]*/
-    }
-    .tw-lliw.item-selected .language_list_item {
-        color: /*[[ac-p]]*/
-    }
-    .language_list_item {
-        color: /*[[fg-p]]*/
-    }
-    .tw-lliw:hover,
-    .tw-lliw:focus {
-        background: /*[[focused]]*/;
-        border-color: /*[[focused]]*/;
-    }
-    .tw-lliw:hover .language_list_item,
-    .tw-lliw:focus .language_list_item {
-        color: /*[[fg-emph]]*/
-    }
-    .language_list_languages.tw-ll-top::after {
-        background: linear-gradient(to bottom, transparent, black);
-    }
-    .tw-lp-search {
-        background: /*[[bg-08]]*/;
-        box-shadow: 0 0 3px 0 black;
-        color: /*[[fg-p]]*/
-    }
-
-    /* "Did you mean?..." */
-    .gt-is-itm {
-        background: /*[[bg-04]]*/;
-        box-shadow: 0 1px 2px 0px black;
-    }
-    .gt-is-lb {
-        color: /*[[fg-p]]*/
-    }
-    .gt-is-cont {
-        color: /*[[fg-emph]]*/
-    }
-    .gt-is-sg {
-        color: /*[[fg-p]]*/
-    }
+    .pno7A.hU1rMc .SwDSDf
+        color fg-disabled
+    
+    .Lm2Tt
+        border-color black
+    
+    .XDTKBd
+        color fg-disabled
+    
+    .ZtnWe
+        color ac-p
+    
 
     /* ==================== */
     /* SECTION: Page footer */
     /* ==================== */
-    #fbar {
-        background: /*[[bg-01]]*/;
-        border-color: black;
-    }
-    .smiUbb {
-        color: /*[[fg-p]]*/
-    }
-    #Wprf1b {
-        color: /*[[fg-emph]]*/
-    }
+    #fbar
+        background bg-01
+        border-color black
+    
+    .smiUbb
+        color fg-p
+    
+    #Wprf1b
+        color fg-emph
+    
     .smiUbb a,
-    #swml a {
-        color: /*[[fg-disabled]]*/
-    }
+    #swml a
+        color fg-disabled
+    
     .smiUbb a:hover,
-    #swml a:hover {
-        color: /*[[fg-emph]]*/
-    }
+    #swml a:hover
+        color fg-emph
+    
     .fbar a:hover,
-    #fsett a:hover {
-        color: /*[[ac-p-hov]]*/
-    }
-}
+    #fsett a:hover
+        color ac-p-hov
+
