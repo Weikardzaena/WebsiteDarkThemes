@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.12
+@version        0.0.13
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -39,10 +39,41 @@ light-offset = unit(5, px)
 /* How wide the light source is */
 light-width = unit(80, px)
 
+lighting(dp)
+    if dp <= 0
+        background bg-00 !important
+    else
+        light-value = 7 * math(87 * dp, "log")
+        background rgb(light-value, light-value, light-value) !important
+
+pAccentLighting(dp)
+    if dp <= 0
+        background ac-p !important
+    else
+        light-val = 7 * math(87 * dp, "log")
+        tint-val = ceil(percentage(min(1, (light-val / 256))))
+        background tint(ac-p, tint-val) !important
+
+pAltAccentLighting(dp)
+    if dp <= 0
+        background ac-p !important
+    else
+        light-val = 7 * math(87 * dp, "log")
+        tint-val = ceil(percentage(min(1, (light-val / 256))))
+        background tint(ac-p, tint-val) !important
+
+sAccentLighting(dp)
+    if dp <= 0
+        background ac-s !important
+    else
+        light-val = 7 * math(87 * dp, "log")
+        tint-val = ceil(percentage(min(1, (light-val / 256))))
+        background tint(ac-s, tint-val) !important
+
 elevation(dp)
     dp = unit(dp, px)
     if dp <= 0 or dp >= light-elev
-        box-shadow none
+        box-shadow none !important
     else
         /* This math comes from leveraging similar triangles with a flat light source and a flat visual element */
         bottom-offset = (light-offset / ((light-elev / dp) - 1))
@@ -53,7 +84,7 @@ elevation(dp)
         /* a^2 + b^2 = c^2, so we take the sqrt here. */
         radius = math(result, "sqrt")
         offset-tot = bottom-offset + (radius / 2)
-        box-shadow 0 offset-tot radius 0 black, 0 0 max((radius / 2), unit(2, px)) 0 black
+        box-shadow 0 offset-tot radius 0 black, 0 0 max((radius / 2), unit(2, px)) 0 black !important
 
 @-moz-document regexp("^https:\\/\\/www\\.google\\.com(?!\\/maps)(?!\\/flights)((?!tbm=).)*$")
     
@@ -61,7 +92,7 @@ elevation(dp)
     /* SECTION: Global */
     /* =============== */
     body
-        background bg-00
+        lighting(0)
         color fg-p
 
     /* Links */
@@ -119,55 +150,34 @@ elevation(dp)
     #gb#gb a.gb_e,
     #gb#gb span.gb_e
         color fg-p
+        &:hover
+            color fg-emph
     
     #hptl a
         color fg-p
-    
-
-    /* Search buttons */
-    .jhp input[type="submit"],
-    .sbdd_a input,
-    .gbqfba
-        background bg-08
-        border: none
-        elevation(8)
-        color fg-p
-    
-    .jhp input[type="submit"]:hover,
-    .sbdd_a input:hover,
-    .gbqfba:hover
-        background focused
-        color fg-emph
-        border: none
-    
-    /* Footer */
-    .ftl,
-    #footer a
-        color fg-disabled
-    
-
-    /* =================== */
-    /* SECTION: Search bar */
-    /* =================== */
+        
     .RNNXgb
-        background bg-06
+        lighting(01)
         border none
-        elevation(1)
+        elevation(01)
+        &:hover
+            lighting(03)
+            elevation(03)
     
-    .RNNXgb:hover,
+    /* Search Bar */
     .sbfc .RNNXgb
-        background bg-12
-        elevation(4)
+        lighting(03)
+        elevation(03)
     
     .rINcab
         color ac-p
     
     .aajZCb
-        background bg-16
-        elevation(16)
+        lighting(03)
+        elevation(03)
     
     .emcav .RNNXgb
-        box-shadow: 0px 1px 6px 0px black
+        elevation(03)
     
     .gLFyf
         color fg-p
@@ -187,22 +197,105 @@ elevation(dp)
     
     .xtSCL
         border-top-color black
+
+    /* Search buttons below search bar */
+    .jhp input[type="submit"],
+    .sbdd_a input,
+    .gbqfba
+        lighting(02)
+        border: none
+        elevation(2)
+        color fg-p
     
+    .jhp input[type="submit"]:hover,
+    .sbdd_a input:hover,
+    .gbqfba:hover
+        lighting(08)
+        color fg-emph
+        border: none
+        elevation(08)
+        
+    /* Search buttons within dropdown results */
+    .aajZCb input[type="submit"]
+        lighting(05)
+        border: none
+        elevation(02)
+        color fg-p
+    
+    .aajZCb input[type="submit"]:hover
+        lighting(12)
+        elevation(08)
+        color fg-emph
+        border: none
+    
+    /* Footer */
+    .ftl,
+    #footer a
+        color fg-disabled
+    
+
+    /* =================== */
+    /* SECTION: Search bar */
+    /* =================== */
+
+    // Main search bar
+    #searchform .RNNXgb
+        lighting(05)
+        border none
+        elevation(01)
+        &:hover
+            lighting(08)
+            elevation(04)
+    
+    // Expanded search bar
+    #searchform .sbfc .RNNXgb
+        lighting(08)
+        elevation(04)
+    
+    #searchform .rINcab
+        color ac-p
+    
+    // Dropdown results
+    #searchform .aajZCb
+        lighting(08)
+        elevation(4)
+    
+    #searchform .emcav .RNNXgb
+        elevation(08)
+    
+    #searchform .gLFyf
+        color fg-p
+    
+    #searchform .RNNXgb:hover .gLFyf,
+    #searchform .gLFyf:focus
+        color fg-emph
+    
+    #searchform .sbl1
+        color fg-p
+    
+    #searchform .sbhl
+        background focused
+    
+    #searchform .sbhl .sbl1
+        color fg-emph
+    
+    #searchform .xtSCL
+        border-top-color black
 
     /* ======================= */
     /* SECTION: Results header */
     /* ======================= */
+    /* X results in Y seconds */
     #appbar
-        background bg-00
-    
+        lighting(00)
 
     /* "All," "Maps," "News," etc. header */
     #hdtbSum
-        background bg-04
+        lighting(04)
     
     #hdtb
         border-bottom-color black
-        box-shadow: 0px 0px 4px black
+        elevation(04)
     
     #hdtb .hdtb-mitem a
         color fg-p
@@ -240,8 +333,8 @@ elevation(dp)
 
     /* "More" dropdown */
     .cF4V5c
-        background bg-24
-        box-shadow: 0px 0px 6px 1px black
+        lighting(12)
+        elevation(08)
     
     .il8Sef a.f9UGee
         color fg-p
@@ -252,14 +345,12 @@ elevation(dp)
     .il8Sef a.f9UGee.AchQod
         color fg-emph
     
-
     /* Very top of the search results page, behind the Google logo */
     .sfbg.nojsv
-        background bg-04
-    
+        lighting(04)
 
     .minidiv .sfbg
-        box-shadow: 0 0 5px 0 black
+        elevation(04)
     
 
     /* ===================== */
@@ -270,60 +361,72 @@ elevation(dp)
         color fg-disabled
     
 
-    /* Tools dropdowns */
+    /* Tools dropdown buttons */
     .hdtb-mn-hd
         color fg-p
     
+    // Tools dropdown arrow
     .hdtb-mn-hd:hover .mn-dwn-arw,
     #hdtb-more:hover .mn-dwn-arw
         border-top-color ac-p
     
+    // Tools dropdown expanded menu
     .hdtb-mn-o,
     .hdtb-mn-c
-        background bg-24
+        elevation(08)
+        lighting(08)
     
+    // Tools dropdown expanded menu list item
     .hdtbItm
-        background bg-24
+        lighting(08)
     
+    // Tools dropdown expanded menu links
     .hdtbItm.hdtbSel,
     #hdtb .hdtbItm a,
     #hdtb-more-mn a,
     #cdrlnk
         color fg-p
+        &:hover
+            background focused
+            color fg-emph
     
-    #hdtb-more-mn a:hover,
-    .hdtbItm.hdtbSel:hover,
-    .hdtbItm a:hover,
-    #cdrlnk:hover
-        background bg-04
-        color fg-emph
-    
+    // Selected tools dropdown menu list item
     .hdtbItm.hdtbSel
-        background bg-04
+        background focused
         color fg-emph
     
+    // Tools dropdown expanded menu optional link at bottom
     #cdr_opt
-        background bg-24
+        lighting(08)
     
+    // Separator between tools dropdown options and link at bottom
     .cdr_sep
         border-color black
     
 
     /* "More" FABs */
-    g-fab
-        background ac-s !important
+    g-fab,
+    .bl0seb.eSq3C g-fab,
+    .k20eod.eSq3C g-fab
+        sAccentLighting(06)
         color fg-on-s !important
-        box-shadow: 0 0 5px 3px black !important
+        elevation(06)
+        &:active
+            elevation(12)
+        &:hover
+            sAccentLighting(12)
     
+    // FAB border
     .CNf3nf
         border-color transparent !important
     
+    // FAB opacity
     .Lu0opc
         opacity: 1 !important
     
+    // FAB arrow fill
     g-fab .z1asCe
         fill: fg-on-p
-    
 
     /* Main result cards */
     .kp-blk
@@ -728,7 +831,7 @@ elevation(dp)
     /* SECTION: Page footer */
     /* ==================== */
     #fbar
-        background bg-01
+        background bg-08
         border-color black
     
     .smiUbb
