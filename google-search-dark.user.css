@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.13
+@version        0.0.14
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -93,6 +93,9 @@ elevation(dp)
     /* =============== */
     body
         lighting(0)
+        color fg-p
+
+    textarea
         color fg-p
 
     /* Links */
@@ -430,9 +433,9 @@ elevation(dp)
 
     /* Main result cards */
     .kp-blk
-        background bg-01
         border: none
-        box-shadow: 0px 0px 5px black
+        lighting(01)
+        elevation(01)
     
 
     /* Search result summary */
@@ -446,11 +449,11 @@ elevation(dp)
 
     /* Trending story cards */
     g-inner-card
-        background bg-01
+        lighting(01)
     
     .cv2VAd
         border: none
-        box-shadow: 0px 0px 5px black
+        elevation(01)
     
     .wUrVib
         color ac-p
@@ -463,21 +466,9 @@ elevation(dp)
     /* Maps cards */
     .vk_c,
     .vk_cxp
-        background bg-01
-    
-    .ccBEnf
-        border-color black
-    
-    .vk_c,
-    .vk_cxp,
-    #rhs .fIcnad
-        border-color black
-    
-    .wYWDAd
-        border-color black
-    
-    div.AEprdc.vk_c
-        box-shadow: 0px 0px 5px black
+        elevation(01)
+        lighting(01)
+        border-color: transparent
     
     .yyjhs
         background bg-08
@@ -516,9 +507,9 @@ elevation(dp)
 
     /* After clicking a link, the surrounding "people also search for" tile */
     .exp-outline
-        background bg-01
+        lighting(01)
+        elevation(01)
         border: none
-        box-shadow: 0px 0px 5px black
     
     .eJ7tvc
         color fg-p
@@ -743,7 +734,118 @@ elevation(dp)
     #irl_r_a:hover
         color ac-s
     
+    /* ================== */
+    /* SECTION: Translate */
+    /* ================== */
 
+    // Translation result
+    #tw-target
+        lighting(01)
+    
+    // Enter Text field
+    .tw-data-placeholder
+        color: fg-p
+    
+    // Internal UI Borders
+    .DHcWmd
+        background black
+    .vCOSGb
+        border-color black
+    
+    // Language suggestions box
+    .gt-is
+        lighting(01)
+    
+    // Language suggestion tile
+    .gt-is-itm
+        lighting(05)
+        elevation(04)
+    .gt-is-itm-active,
+    .gt-is-itm-focused,
+    .gt-is-itm:hover,
+    .gt-is-itm:active
+        lighting(09)
+        elevation(08)
+    .gt-is-lb,
+    .gt-is-cont
+        color fg-p
+    
+    // Phrase suggestions
+    .gt-is-sg
+        color fg-p
+     
+    // UI Buttons
+    .tw-menu-btn
+        color: fg-p
+        &:not(.tw-menu-btn-disabled):hover
+            color: ac-p
+    
+    // Language selection dropdown buttons
+    .hhB0V
+        color: ac-p
+
+     // Language selection view
+    .zaokob
+        elevation(01)
+        lighting(01)
+    .language_list_languages.tw-ll-top::after
+        background linear-gradient(to bottom, transparent, black)
+    
+    // Language selection view search
+    .tw-lp-search
+        color fg-p
+        elevation(01)
+        lighting(02)
+    
+    // Language selection view header
+    .GL3ftd
+        border-color black
+    
+    // Language list item
+    .language_list_item
+        color fg-p
+    .tw-lliw:hover,
+    .tw-lliw:focus
+        lighting(04)
+        elevation(04)
+        border-color transparent
+    .tw-lliw.item-selected .language_list_item
+        color ac-p
+
+    /* SECTION: Translation Feedback dialog */
+    .NJfJb
+        elevation(24)
+        lighting(24)
+    
+    // Checked radio button
+    .bzPMYzFI66P__blue .bzPMYzFI66P__inner-circle,
+    .bzPMYzFI66P__blue .bzPMYzFI66P__checked .bzPMYzFI66P__active-circle,
+    .bzPMYzFI66P__blue .bzPMYzFI66P__highlight .bzPMYzFI66P__active-circle
+        background ac-p
+    .bzPMYzFI66P__blue .bzPMYzFI66P__checked .bzPMYzFI66P__outer-circle
+        border-color ac-p
+    .bzPMYzFI66P__outer-circle
+        border-color fg-disabled
+    
+    // Comments or suggestions textfield
+    .NJfJb textarea
+        lighting(24)
+    .GItzWb
+        background ac-p
+    .c0dB4b
+        border-color black
+    
+    // "Send" button
+    .U8shWc.Vy8nid:disabled,
+    .U8shWc.Vy8nid[disabled]:not([disabled=false])
+        color fg-disabled !important
+    .U8shWc.Vy8nid
+        color ac-p !important
+        
+    // Dialog footer
+    .duf3cw-ctrl
+        border-color black
+    
     /* =================== */
     /* SECTION: Calculator */
     /* =================== */
