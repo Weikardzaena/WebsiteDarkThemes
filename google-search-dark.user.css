@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.14
+@version        0.0.15
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
@@ -284,6 +284,39 @@ elevation(dp)
     
     #searchform .xtSCL
         border-top-color black
+    
+    /* ============================ */
+    /* SECTION: Google Apps popover */
+    /* ============================ */
+
+    // popover main section
+    .gb_I,
+    .gb_E
+        lighting(24)
+    .gb_E
+        elevation(24)
+    
+    // Bottom "more" button
+    .gb_J
+        lighting(08)
+        color ac-p
+        &:visited
+            color ac-s
+            
+    // Bottom "Even more from google" link
+    .gb_K
+        color ac-p
+        &:visited
+            color ac-s
+    
+    // App icons
+    .gb_r
+        color fg-p
+    .gb_i:hover a
+        border-color transparent
+        elevation(08)
+    .gb_i:not(.gb_j):hover .gb_r
+        lighting(24)
 
     /* ======================= */
     /* SECTION: Results header */
