@@ -1,92 +1,94 @@
 /* ==UserStyle==
 @name           Google Search Material Dark
 @namespace      github.com/openstyles/stylus
-@version        0.0.15
+@version        0.0.16
 @description    Custom dark theme applied to Google Search Results following Material Design practices
 @author         Weikardzaena
 @license        Apache 2.0
 @updateURL      https://raw.githubusercontent.com/Weikardzaena/WebsiteDarkThemes/material-elevation/google-search-dark.user.css
 @preprocessor   stylus
 ==/UserStyle== */
-
-bg-00 = #121212
-bg-01 = #1d1d1d
-bg-02 = #222222
-bg-03 = #242424
-bg-04 = #272727
-bg-06 = #2c2c2c
-bg-08 = #2e2e2e
-bg-12 = #323232
-bg-16 = #353535
-bg-24 = #373737
-focused = #ffffff3d
-fg-p = #ffffff9a
-fg-emph = #ffffffdf
-fg-disabled = #ffffff61
-fg-on-p = #000000
-fg-on-s = #000000
-fg-on-e = #ffffff
-ac-p = #8fcdfd
-ac-p-hov = #e3f3fe
-ac-p-alt = #a3d597
-ac-s = #d392c6
-error = #ba453f
-
-/* How high off the 0dp level the light source is */
-light-elev = unit(60, px)
-/* dp offset of the light source relative to the bottom-aligned edge of the visual element */
-light-offset = unit(5, px)
-/* How wide the light source is */
-light-width = unit(80, px)
-
-lighting(dp)
-    if dp <= 0
-        background bg-00 !important
-    else
-        light-value = 7 * math(87 * dp, "log")
-        background rgb(light-value, light-value, light-value) !important
-
-pAccentLighting(dp)
-    if dp <= 0
-        background ac-p !important
-    else
-        light-val = 7 * math(87 * dp, "log")
-        tint-val = ceil(percentage(min(1, (light-val / 256))))
-        background tint(ac-p, tint-val) !important
-
-pAltAccentLighting(dp)
-    if dp <= 0
-        background ac-p !important
-    else
-        light-val = 7 * math(87 * dp, "log")
-        tint-val = ceil(percentage(min(1, (light-val / 256))))
-        background tint(ac-p, tint-val) !important
-
-sAccentLighting(dp)
-    if dp <= 0
-        background ac-s !important
-    else
-        light-val = 7 * math(87 * dp, "log")
-        tint-val = ceil(percentage(min(1, (light-val / 256))))
-        background tint(ac-s, tint-val) !important
-
-elevation(dp)
-    dp = unit(dp, px)
-    if dp <= 0 or dp >= light-elev
-        box-shadow none !important
-    else
-        /* This math comes from leveraging similar triangles with a flat light source and a flat visual element */
-        bottom-offset = (light-offset / ((light-elev / dp) - 1))
-        /* numerator and denom come from similar triangles */
-        numerator = (light-width ** 2) * (dp ** 2 + bottom-offset ** 2)
-        denom = light-width ** 2 + (light-elev - dp) ** 2
-        result = (numerator / denom)
-        /* a^2 + b^2 = c^2, so we take the sqrt here. */
-        radius = math(result, "sqrt")
-        offset-tot = bottom-offset + (radius / 2)
-        box-shadow 0 offset-tot radius 0 black, 0 0 max((radius / 2), unit(2, px)) 0 black !important
-
 @-moz-document regexp("^https:\\/\\/www\\.google\\.com(?!\\/maps)(?!\\/flights)((?!tbm=).)*$")
+    bg-00 = #121212
+    bg-01 = #1d1d1d
+    bg-02 = #222222
+    bg-03 = #242424
+    bg-04 = #272727
+    bg-06 = #2c2c2c
+    bg-08 = #2e2e2e
+    bg-12 = #323232
+    bg-16 = #353535
+    bg-24 = #373737
+    focused = #ffffff3d
+    fg-p = #ffffff9a
+    fg-emph = #ffffffdf
+    fg-disabled = #ffffff61
+    fg-on-p = #000000
+    fg-on-s = #000000
+    fg-on-e = #ffffff
+    ac-p = #8fcdfd
+    ac-p-hov = #e3f3fe
+    ac-p-alt = #a3d597
+    ac-s = #d392c6
+    error = #ba453f
+
+    /* How high off the 0dp level the light source is */
+    light-elev = unit(60, px)
+    /* dp offset of the light source relative to the bottom-aligned edge of the visual element */
+    light-offset = unit(5, px)
+    /* How wide the light source is */
+    light-width = unit(80, px)
+
+    lighting(dp)
+        if dp <= 0
+            background bg-00 !important
+        else
+            light-value = 7 * math(87 * dp, "log")
+            background rgb(light-value, light-value, light-value) !important
+
+    pAccentLighting(dp)
+        if dp <= 0
+            background ac-p !important
+        else
+            light-val = 7 * math(87 * dp, "log")
+            tint-val = ceil(percentage(min(1, (light-val / 256))))
+            background tint(ac-p, tint-val) !important
+
+    pAltAccentLighting(dp)
+        if dp <= 0
+            background ac-p !important
+        else
+            light-val = 7 * math(87 * dp, "log")
+            tint-val = ceil(percentage(min(1, (light-val / 256))))
+            background tint(ac-p, tint-val) !important
+
+    sAccentLighting(dp)
+        if dp <= 0
+            background ac-s !important
+        else
+            light-val = 7 * math(87 * dp, "log")
+            tint-val = ceil(percentage(min(1, (light-val / 256))))
+            background tint(ac-s, tint-val) !important
+
+    elevation(dp)
+        dp = unit(dp, px)
+        if dp <= 0 or dp >= light-elev
+            box-shadow none !important
+        else
+            /* This math comes from leveraging similar triangles with a flat light source and a flat visual element */
+            bottom-offset = (light-offset / ((light-elev / dp) - 1))
+            /* numerator and denom come from similar triangles */
+            numerator = (light-width ** 2) * (dp ** 2 + bottom-offset ** 2)
+            denom = light-width ** 2 + (light-elev - dp) ** 2
+            result = (numerator / denom)
+            /* a^2 + b^2 = c^2, so we take the sqrt here. */
+            radius = math(result, "sqrt")
+            offset-tot = bottom-offset + (radius / 2)
+            box-shadow 0 offset-tot radius 0 black, 0 0 max((radius / 2), unit(2, px)) 0 black !important
+    
+    scrimmedBg()
+        background bg-24 !important
+        opacity 0.75 !important
     
     /* =============== */
     /* SECTION: Global */
@@ -692,8 +694,203 @@ elevation(dp)
         background ac-s
         color fg-on-s
     
+    /* ========================= */
+    /* SECTION: Right music info */
+    /* ========================= */
 
-    /* Right-side cards */
+    // "Did you like this album?"
+    .JW2g8
+        border-color black
+
+    // XX % liked this album
+    .OZ8wsd
+        color fg-disabled
+    
+    // Like/Dislike thumbs 
+    .h7xSye
+        fill fg-disabled
+        border-color fg-disabled
+        &:hover,
+        &:active
+            fill ac-p
+            border-color ac-p
+
+    // "Liked" state
+    .TfceZe[data-s="true"] svg
+        color ac-p-alt
+        fill ac-p-alt
+
+    // "Disliked" state
+    .O0rAic[data-s="true"] svg
+        color error
+        fill error
+
+    // "Available On" links
+    .Eegi6c
+        color fg-p
+
+    // "Available On" link borders
+    .scrt td,
+    .scrt tr:first-child td,
+    .scrt tr:last-child td
+        border-color black
+        
+    // "More music services" expando
+    .dUFb4e
+        color fg-p
+    
+    // Music info headers
+    .w8qArf .fl
+        color fg-p !important
+    
+    // Song list rows
+    .rl_item_base
+        elevation(01)
+        lighting(02)
+        border-color transparent
+        &:hover,
+        &:active
+            elevation(08)
+            lighting(09)
+            z-index 100
+        &:focus
+            z-index 100
+
+    // Song list title
+    .rl_item_base .title
+        color fg-p
+        padding-left 15px
+
+    // Song list number
+    .q0OVVc
+        color fg-p
+        padding-left 15px
+    
+    // Song duration
+    .NmQOSc
+        color fg-p
+        padding-right 15px
+    
+    // "View More" under songs list
+    .P7Vl4c .RCBpod
+        color fg-disabled
+    
+    // "Posting Publicly"
+    .BP43u,
+    .xgyIXd
+        color fg-disabled
+    
+    // "Be the first to review" button
+    .Zivqke
+        color ac-p !important
+    
+    // "Help other viewers of this page"
+    .Mz7Vzb
+        color fg-disabled
+        
+    // Border below reviews
+    .jA1nid
+        border-color black
+    
+    /* ============================= */
+    /* SECTION: Music Review popover */
+    /* ============================= */
+    // Background
+    .Xz5tfb.aID8W
+        scrimmedBg()
+    
+    // Music review main dialog
+    .NJfJb.mr5vfb
+        lighting(00)
+        elevation(24)
+        border none
+    
+    // "Write a review"
+    .foTEEb
+        lighting(04)
+        color fg-p
+        box-shadow none
+        border-bottom 1px solid black
+    
+    // Link to Google Profile
+    .Bk8Hxd:link,
+    .Bk8Hxd:visited
+        color fg-p
+    
+    .NJfJb.mr5vfb textarea
+        elevation(01)
+        lighting(01)
+        border none
+        &::placeholder
+            color fg-disabled
+    
+    // "Do you want to discard your changes?" banner
+    .Wmk3Kb
+        background ac-p
+        color fg-on-p
+    
+    // Yes/No buttons
+    .MycV7b
+        color fg-on-p
+        &:hover,
+        &:active
+            text-decoration underline
+    
+    // Music Review dialog Cancel/Post buttons
+    .viyDOb
+        color ac-p
+    .IkxiNb
+        background-color ac-p
+        color fg-on-p
+    
+    /* ====================== */
+    /* SECTION: Share popover */
+    /* ====================== */
+
+    // Background
+    .qW28Ef.aID8W
+        scrimmedBg()
+        
+    // Share main dialog
+    .EF2Bkc
+        lighting(01)
+        color fg-p
+    
+    // "Share" title
+    .muUXmb
+        color fg-p
+    
+    // Share "close" button
+    .ULejkd
+        color fg-p
+        &:focus
+            elevation(08)
+            lighting(32)
+            color fg-emph
+            transition none
+    
+    // Share dialog links
+    .DssFqf,
+    .UN0Fyc
+        color fg-p
+    
+    // "Click to copy link"
+    .jCOogd
+        color fg-disabled
+    input.NBMVc
+        lighting(01)
+        elevation(01)
+        color fg-p
+        border-radius 4px
+        &:hover,
+        &:active
+            lighting(08)
+            elevation(08)
+    .LXtP0 .ZXb90b
+        padding 4px
+    /* ========================= */
+    /* SECTION: Right-side cards */
+    /* ========================= */
     .kno-ecr-pt
         color fg-emph
     
